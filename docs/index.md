@@ -1,40 +1,110 @@
-# R Courses
+# Scala
 
-I'm going to give a course about R, but it's take a lot of time to finish. I will give at least one lesson a week. You can track it here
+![](http://ncredinburgh.com/img/blog/henry_coles/scala-logo.gif)
 
-<ul>
-    <li>(next) Data visualization with R</li>
-    <li><a title="Everything you need to know about R" href="https://datayo.wordpress.com/2015/04/12/everything-you-need-to-know-about-r/" target="_blank">Everything you need to know about R</a></li>
-    <li><a title="Read and write data in R" href="https://datayo.wordpress.com/2015/04/18/read-and-write-data-in-r/" target="_blank">Read and Write Data</a>
-<ul>
-    <li><a title="Parse JSON with R" href="https://datayo.wordpress.com/2015/04/05/parse-json-with-r-2/" target="_blank">Importing data from JSON into R</a></li>
-</ul>
-</li>
-    <li><a title="Manipulate Data" href="https://datayo.wordpress.com/2015/04/25/manipulate-data-in-r/" target="_blank">Manipulate Data</a></li>
-    <li><a title="Manipulate String and Datetime in R" href="https://datayo.wordpress.com/2015/05/02/manipulate-string-and-datetime-in-r/">Manipulate String and Datetime</a></li>
-</ul>
+<blockquote>
+  Scala is a programming language for general software applications. Scala has full support for functional programming and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than other general-purpose programming languages. Many of Scala's design decisions were inspired by criticism of the shortcomings of Java.
+</blockquote>
 
-Actually, beside my works, there are a lot of excellent and free courses in the internet for you
+<h3>Tools</h3>
 
-<strong>Beginner</strong>
+<table>
+<tbody>
+<tr>
+<td style="text-align:center;width:50%;"><img src="https://cdn2.iconfinder.com/data/icons/ballicons-2-free/100/wrench-32.png" alt="" />
+Build Tool</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="http://www.scala-sbt.org/" target="_blank">SBT</a></td>
+</tr>
+</tbody>
+</table>
 
-<a href="http://tryr.codeschool.com/">tryr from codeschool</a>
+<a href="https://confluence.jetbrains.com/display/SCA/Scala+Plugin+for+IntelliJ+IDEA">Creating and Running Your Scala Application</a>
+<a href="https://docs.sigmoidanalytics.com/index.php/Step_by_Step_instructions_on_how_to_build_Spark_App_with_IntelliJ_IDEA">Step by Step instructions on how to build Spark App with IntelliJ IDEA</a>
 
-tryr is a course for beginners created by codeschool. This course contains R Syntax, Vectors, Matrices, Summary Statistics, Factors, Data Frames and Working With Real-World Data sections.
+# Scala: Syntax
 
-<a href="https://www.datacamp.com/courses/free-introduction-to-r">Introduction to R from datacamp</a>
+## Convention [^1]
 
-This course created by datacamp - a "online learning platform that focuses on building the best learning experience for Data Science in specific". Here is the introduction about this course quoted from authors "In this introduction to R, you will master the basics of this beautiful open source language such as factors, lists and data frames. With the knowledge gained in this course, you will be ready to undertake your first very own data analysis." It contains 6 chapters: Intro to basics, Vectors, Matrices, Factors, Data frames and Lists.
+### Keep It Simple
 
-<strong>Intermediate and Advanced</strong>
+### Don't pack two much in one expression
 
-<a href="https://www.coursera.org/course/rprog">R Programming of Johns Hopkins University in coursera</a> Learn how to program in R and how to use R for effective data analysis. This is the second course in the <a href="https://www.coursera.org/specialization/jhudatascience/1?utm_medium=courseDescripTop">Johns Hopkins Data Science Specialization</a>. It's a 4-weeks course, contains: Overview of R, R data types and objects, reading and writing data (week 1),  Control structures, functions, scoping rules, dates and times (week 2), Loop functions, debugging tools (week 3) and Simulation, code profiling (week 4)
+```scala
+/*
+ * It's amazing what you can get done in a single statement
+ * But that does not mean you have to do it.
+ */
+jp.getRawClasspath.filter(
+  _.getEntryKind == IClasspathEntry.CPE_SOURCE).
+  iterator.flatMap(entry =>
+    flatten(ResourcesPlugin.getWorkspace.
+      getRoot.findMember(entry.getPath)))
+```
 
-<a href="http://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/"> An Introduction to Statistical Learning with Applications in R of two experts Trevor Hastie and Rob Tibshirani from Standfor Unitiversity</a>
+#### Refactor
 
-This course was introduced by Kevin Markham in r-blogger in september 2014. "I found it to be an excellent course in statistical learning (also known as “machine learning”), largely due to the high quality of both the textbook and the video lectures. And as an R user, it was extremely helpful that they included R code to demonstrate most of the techniques described in the book." In this course you will learn about Statistical Learning, Linear Regression, Classification, Resampling Methods, Linear Model Selection and Regularization, Moving Beyond Linearity, Tree-Based Methods, Support Vector Machines and Unsupervised Learning
+* There's a lot of value in meaningfull names.
+* Easy to add them using inline vals and defs
 
-<ul>
-<li><a href="http://www.analyticsvidhya.com/blog/2015/09/full-cheatsheet-machine-learning-algorithms/?utm_source=FBPage&amp;utm_medium=Social&amp;utm_campaign=150915">Cheatsheet – Python &amp; R codes for common Machine Learning Algorithms</a></li>
-</ul>
+```scala
+val sources = jp.getRawClasspath.filter(
+  _.getEntryKind == IClasspathEntry.CPE_SOURCE)
+def workspaceRoot =
+  ResourcesPlugin.getWorkspace.getRoot
+def filesOfEntry(entry: Set[File]) =
+  flatten(worspaceRoot.findMember(entry.getPath)
+sources.iterator flatMap filesOfEntry
+```
 
+### Prefer Functional
+
+By default
+
+- use vals, not vars
+- use recursions or combinators, not loops
+- use immutable collections
+- concentrate on transformations, not CRUD
+
+When to deviate from the default
+- sometimes, mutable gives better performance.
+- sometimes (but not that often!) it adds convenience
+
+### But don't diablolize local state
+
+Why does mutable state lead to complexity?
+
+It interacts with different program parts in ways that are hard to track.
+
+=> Local state is less harmful than global state.
+
+### "Var" Shortcuts
+
+```scala
+var interfaces = parseClassHeader()...
+if (isAnnotation) interfaces += ClassFileAnnotation
+```
+
+**Refactor**
+
+```scala
+val parsedIfaces = parseClassHeader()
+val interfaces =
+  if (isAnnotation) parsedIfaces + ClassFileAnnotation
+  else parsedIfaces
+```
+
+[^1]: [Martin Odersky - Scala with Style](https://www.youtube.com/watch?v=kkTFx3-duc8)
+
+# Scala: Data Structure
+
+## Scala: Collection
+
+# Scala: IDE
+
+# IntellIJ: Scala IDE
+
+# Online IDE
+
+[http://www.tryscala.com/](http://www.tryscala.com/)

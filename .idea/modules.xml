@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/r.iml" filepath="$PROJECT_DIR$/.idea/r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/scala.iml" filepath="$PROJECT_DIR$/.idea/scala.iml" />
     </modules>
   </component>
 </project>

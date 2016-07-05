@@ -1,1 +1,1 @@
-## R Tutorial
+## Scala Tutorial

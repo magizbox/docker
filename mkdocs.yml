@@ -1,4 +1,4 @@
-site_name: RTutorial
+site_name: ScalaTutorial
 pages:
 - "Home": 'index.md'
 markdown_extensions:
