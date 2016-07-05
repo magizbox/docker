@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>ScalaTutorial</title>
+	<title>NodeJSTutorial</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -35,7 +35,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">ScalaTutorial</a>
+            <a class="navbar-brand" href=".">NodeJSTutorial</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -60,121 +60,25 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#scala">Scala</a></li>
-        
-    
-        <li class="main "><a href="#scala-syntax">Scala: Syntax</a></li>
-        
-            <li><a href="#convention-1">Convention 1</a></li>
-        
-    
-        <li class="main "><a href="#scala-data-structure">Scala: Data Structure</a></li>
-        
-            <li><a href="#scala-collection">Scala: Collection</a></li>
-        
-    
-        <li class="main "><a href="#scala-ide">Scala: IDE</a></li>
-        
-    
-        <li class="main "><a href="#intellij-scala-ide">IntellIJ: Scala IDE</a></li>
-        
-    
-        <li class="main "><a href="#online-ide">Online IDE</a></li>
+        <li class="main active"><a href="#install-nodejs-ubuntu-1">Install nodejs ubuntu 1</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="scala">Scala</h1>
-<p><img alt="" src="http://ncredinburgh.com/img/blog/henry_coles/scala-logo.gif" /></p>
-<blockquote>
-  Scala is a programming language for general software applications. Scala has full support for functional programming and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than other general-purpose programming languages. Many of Scala's design decisions were inspired by criticism of the shortcomings of Java.
-</blockquote>
+<h1 id="install-nodejs-ubuntu-1">Install nodejs ubuntu <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h1>
+<pre><code class="bash">sudo apt-get update
+sudo apt-get install nodejs
 
-<h3>Tools</h3>
-
-<table>
-<tbody>
-<tr>
-<td style="text-align:center;width:50%;"><img src="https://cdn2.iconfinder.com/data/icons/ballicons-2-free/100/wrench-32.png" alt="" />
-Build Tool</td>
-</tr>
-<tr>
-<td style="text-align:center;"><a href="http://www.scala-sbt.org/" target="_blank">SBT</a></td>
-</tr>
-</tbody>
-</table>
-
-<p><a href="https://confluence.jetbrains.com/display/SCA/Scala+Plugin+for+IntelliJ+IDEA">Creating and Running Your Scala Application</a>
-<a href="https://docs.sigmoidanalytics.com/index.php/Step_by_Step_instructions_on_how_to_build_Spark_App_with_IntelliJ_IDEA">Step by Step instructions on how to build Spark App with IntelliJ IDEA</a></p>
-<h1 id="scala-syntax">Scala: Syntax</h1>
-<h2 id="convention-1">Convention <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h2>
-<h3 id="keep-it-simple">Keep It Simple</h3>
-<h3 id="dont-pack-two-much-in-one-expression">Don't pack two much in one expression</h3>
-<pre><code class="scala">/*
- * It's amazing what you can get done in a single statement
- * But that does not mean you have to do it.
- */
-jp.getRawClasspath.filter(
-  _.getEntryKind == IClasspathEntry.CPE_SOURCE).
-  iterator.flatMap(entry =&gt;
-    flatten(ResourcesPlugin.getWorkspace.
-      getRoot.findMember(entry.getPath)))
+sudo apt-get install npm
 </code></pre>
 
-<h4 id="refactor">Refactor</h4>
-<ul>
-<li>There's a lot of value in meaningfull names.</li>
-<li>Easy to add them using inline vals and defs</li>
-</ul>
-<pre><code class="scala">val sources = jp.getRawClasspath.filter(
-  _.getEntryKind == IClasspathEntry.CPE_SOURCE)
-def workspaceRoot =
-  ResourcesPlugin.getWorkspace.getRoot
-def filesOfEntry(entry: Set[File]) =
-  flatten(worspaceRoot.findMember(entry.getPath)
-sources.iterator flatMap filesOfEntry
-</code></pre>
-
-<h3 id="prefer-functional">Prefer Functional</h3>
-<p>By default</p>
-<ul>
-<li>use vals, not vars</li>
-<li>use recursions or combinators, not loops</li>
-<li>use immutable collections</li>
-<li>concentrate on transformations, not CRUD</li>
-</ul>
-<p>When to deviate from the default
-- sometimes, mutable gives better performance.
-- sometimes (but not that often!) it adds convenience</p>
-<h3 id="but-dont-diablolize-local-state">But don't diablolize local state</h3>
-<p>Why does mutable state lead to complexity?</p>
-<p>It interacts with different program parts in ways that are hard to track.</p>
-<p>=&gt; Local state is less harmful than global state.</p>
-<h3 id="var-shortcuts">"Var" Shortcuts</h3>
-<pre><code class="scala">var interfaces = parseClassHeader()...
-if (isAnnotation) interfaces += ClassFileAnnotation
-</code></pre>
-
-<p><strong>Refactor</strong></p>
-<pre><code class="scala">val parsedIfaces = parseClassHeader()
-val interfaces =
-  if (isAnnotation) parsedIfaces + ClassFileAnnotation
-  else parsedIfaces
-</code></pre>
-
-<h1 id="scala-data-structure">Scala: Data Structure</h1>
-<h2 id="scala-collection">Scala: Collection</h2>
-<h1 id="scala-ide">Scala: IDE</h1>
-<h1 id="intellij-scala-ide">IntellIJ: Scala IDE</h1>
-<h1 id="online-ide">Online IDE</h1>
-<p><a href="http://www.tryscala.com/">http://www.tryscala.com/</a></p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="https://www.youtube.com/watch?v=kkTFx3-duc8">Martin Odersky - Scala with Style</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">How To Install Node.js on an Ubuntu 14.04 server</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
@@ -224,5 +128,5 @@ val interfaces =
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-07-05 07:04:19.997000
+Build Date UTC : 2016-07-05 07:11:11.121000
 -->

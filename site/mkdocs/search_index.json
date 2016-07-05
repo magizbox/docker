@@ -2,78 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Scala\n\n\n\n\n\n  Scala is a programming language for general software applications. Scala has full support for functional programming and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than other general-purpose programming languages. Many of Scala's design decisions were inspired by criticism of the shortcomings of Java.\n\n\n\n\nTools\n\n\n\n\n\n\n\n\n\n\nBuild Tool\n\n\n\n\n\n\nSBT\n\n\n\n\n\n\n\n\n\nCreating and Running Your Scala Application\n\n\nStep by Step instructions on how to build Spark App with IntelliJ IDEA\n\n\nScala: Syntax\n\n\nConvention \n1\n\n\nKeep It Simple\n\n\nDon't pack two much in one expression\n\n\n/*\n * It's amazing what you can get done in a single statement\n * But that does not mean you have to do it.\n */\njp.getRawClasspath.filter(\n  _.getEntryKind == IClasspathEntry.CPE_SOURCE).\n  iterator.flatMap(entry =\n\n    flatten(ResourcesPlugin.getWorkspace.\n      getRoot.findMember(entry.getPath)))\n\n\n\n\nRefactor\n\n\n\n\nThere's a lot of value in meaningfull names.\n\n\nEasy to add them using inline vals and defs\n\n\n\n\nval sources = jp.getRawClasspath.filter(\n  _.getEntryKind == IClasspathEntry.CPE_SOURCE)\ndef workspaceRoot =\n  ResourcesPlugin.getWorkspace.getRoot\ndef filesOfEntry(entry: Set[File]) =\n  flatten(worspaceRoot.findMember(entry.getPath)\nsources.iterator flatMap filesOfEntry\n\n\n\n\nPrefer Functional\n\n\nBy default\n\n\n\n\nuse vals, not vars\n\n\nuse recursions or combinators, not loops\n\n\nuse immutable collections\n\n\nconcentrate on transformations, not CRUD\n\n\n\n\nWhen to deviate from the default\n- sometimes, mutable gives better performance.\n- sometimes (but not that often!) it adds convenience\n\n\nBut don't diablolize local state\n\n\nWhy does mutable state lead to complexity?\n\n\nIt interacts with different program parts in ways that are hard to track.\n\n\n=\n Local state is less harmful than global state.\n\n\n\"Var\" Shortcuts\n\n\nvar interfaces = parseClassHeader()...\nif (isAnnotation) interfaces += ClassFileAnnotation\n\n\n\n\nRefactor\n\n\nval parsedIfaces = parseClassHeader()\nval interfaces =\n  if (isAnnotation) parsedIfaces + ClassFileAnnotation\n  else parsedIfaces\n\n\n\n\nScala: Data Structure\n\n\nScala: Collection\n\n\nScala: IDE\n\n\nIntellIJ: Scala IDE\n\n\nOnline IDE\n\n\nhttp://www.tryscala.com/\n\n\n\n\n\n\n\n\n\n\nMartin Odersky - Scala with Style", 
+            "text": "Install nodejs ubuntu \n1\n\n\nsudo apt-get update\nsudo apt-get install nodejs\n\nsudo apt-get install npm\n\n\n\n\n\n\n\n\n\n\n\n\nHow To Install Node.js on an Ubuntu 14.04 server", 
             "title": "Home"
         }, 
         {
-            "location": "/#scala", 
-            "text": "Scala is a programming language for general software applications. Scala has full support for functional programming and a very strong static type system. This allows programs written in Scala to be very concise and thus smaller in size than other general-purpose programming languages. Many of Scala's design decisions were inspired by criticism of the shortcomings of Java.", 
-            "title": "Scala"
-        }, 
-        {
-            "location": "/#scala-syntax", 
-            "text": "", 
-            "title": "Scala: Syntax"
-        }, 
-        {
-            "location": "/#convention-1", 
-            "text": "", 
-            "title": "Convention 1"
-        }, 
-        {
-            "location": "/#keep-it-simple", 
-            "text": "", 
-            "title": "Keep It Simple"
-        }, 
-        {
-            "location": "/#dont-pack-two-much-in-one-expression", 
-            "text": "/*\n * It's amazing what you can get done in a single statement\n * But that does not mean you have to do it.\n */\njp.getRawClasspath.filter(\n  _.getEntryKind == IClasspathEntry.CPE_SOURCE).\n  iterator.flatMap(entry = \n    flatten(ResourcesPlugin.getWorkspace.\n      getRoot.findMember(entry.getPath)))", 
-            "title": "Don't pack two much in one expression"
-        }, 
-        {
-            "location": "/#refactor", 
-            "text": "There's a lot of value in meaningfull names.  Easy to add them using inline vals and defs   val sources = jp.getRawClasspath.filter(\n  _.getEntryKind == IClasspathEntry.CPE_SOURCE)\ndef workspaceRoot =\n  ResourcesPlugin.getWorkspace.getRoot\ndef filesOfEntry(entry: Set[File]) =\n  flatten(worspaceRoot.findMember(entry.getPath)\nsources.iterator flatMap filesOfEntry", 
-            "title": "Refactor"
-        }, 
-        {
-            "location": "/#prefer-functional", 
-            "text": "By default   use vals, not vars  use recursions or combinators, not loops  use immutable collections  concentrate on transformations, not CRUD   When to deviate from the default\n- sometimes, mutable gives better performance.\n- sometimes (but not that often!) it adds convenience", 
-            "title": "Prefer Functional"
-        }, 
-        {
-            "location": "/#but-dont-diablolize-local-state", 
-            "text": "Why does mutable state lead to complexity?  It interacts with different program parts in ways that are hard to track.  =  Local state is less harmful than global state.", 
-            "title": "But don't diablolize local state"
-        }, 
-        {
-            "location": "/#var-shortcuts", 
-            "text": "var interfaces = parseClassHeader()...\nif (isAnnotation) interfaces += ClassFileAnnotation  Refactor  val parsedIfaces = parseClassHeader()\nval interfaces =\n  if (isAnnotation) parsedIfaces + ClassFileAnnotation\n  else parsedIfaces", 
-            "title": "\"Var\" Shortcuts"
-        }, 
-        {
-            "location": "/#scala-data-structure", 
-            "text": "", 
-            "title": "Scala: Data Structure"
-        }, 
-        {
-            "location": "/#scala-collection", 
-            "text": "", 
-            "title": "Scala: Collection"
-        }, 
-        {
-            "location": "/#scala-ide", 
-            "text": "", 
-            "title": "Scala: IDE"
-        }, 
-        {
-            "location": "/#intellij-scala-ide", 
-            "text": "", 
-            "title": "IntellIJ: Scala IDE"
-        }, 
-        {
-            "location": "/#online-ide", 
-            "text": "http://www.tryscala.com/      Martin Odersky - Scala with Style", 
-            "title": "Online IDE"
+            "location": "/#install-nodejs-ubuntu-1", 
+            "text": "sudo apt-get update\nsudo apt-get install nodejs\n\nsudo apt-get install npm      How To Install Node.js on an Ubuntu 14.04 server", 
+            "title": "Install nodejs ubuntu 1"
         }
     ]
 }

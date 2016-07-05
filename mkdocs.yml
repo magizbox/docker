@@ -1,4 +1,4 @@
-site_name: ScalaTutorial
+site_name: NodeJSTutorial
 pages:
 - "Home": 'index.md'
 markdown_extensions:
