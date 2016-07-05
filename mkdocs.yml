@@ -1,4 +1,4 @@
-site_name: JavaTutorial
+site_name: RTutorial
 pages:
 - "Home": 'index.md'
 markdown_extensions:
