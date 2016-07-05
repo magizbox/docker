@@ -1,5 +1,9 @@
-site_name: OctaveTutorial
+site_name: Platform
 pages:
 - "Home": 'index.md'
+- "Chrome Extension": 'extension.md'
+- "Cocos-2dx": 'cocos.md'
+- "Web": 'web.md'
+- "Android": 'android.md'
 markdown_extensions:
     - footnotes

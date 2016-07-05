@@ -9,4 +9,36 @@
     </url>
     
 
+    
+    <url>
+     <loc>None/extension/</loc>
+     <lastmod>2016-07-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/cocos/</loc>
+     <lastmod>2016-07-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/web/</loc>
+     <lastmod>2016-07-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/android/</loc>
+     <lastmod>2016-07-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
