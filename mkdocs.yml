@@ -1,4 +1,4 @@
-site_name: NodeJSTutorial
+site_name: OctaveTutorial
 pages:
 - "Home": 'index.md'
 markdown_extensions:
