@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>UML - ComputerScience</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">ComputerScience</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../data_algorithm/">Data Structure & ALgorithm</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Database <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../database/">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../db_sql/">SQL</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../db_mysql/">MySQL</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../db_redis/">Redis</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../networking/">Networking</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">OOP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../oop/">Introduction</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">UML</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../os/">Operating System</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../oop/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../os/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#architecture">Architecture</a></li>
+        
+    
+        <li class="main "><a href="#modelling-types">Modelling Types</a></li>
+        
+    
+        <li class="main "><a href="#diagrams">Diagrams</a></li>
+        
+            <li><a href="#usecase-diagram">Usecase Diagram</a></li>
+        
+            <li><a href="#class-diagram">Class Diagram</a></li>
+        
+            <li><a href="#sequence-diagram">Sequence Diagram</a></li>
+        
+            <li><a href="#activity-diagram">Activity Diagram</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<blockquote>
+<p>The Unified Modeling Language (UML) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.</p>
+</blockquote>
+<ul>
+<li>http://www.yuml.me/</li>
+<li>Use UML with IntellIJ: <a href="https://www.jetbrains.com/idea/features/uml_designer.html">UML Designer</a></li>
+</ul>
+
+<h1 id="architecture">Architecture</h1>
+<p><sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<p><img alt="" src="http://www.openloop.com/softwareEngineering/uml/overview/archAndUML.jpg" /></p>
+<ul>
+<li><strong>Design</strong> of a system consists of classes, interfaces and collaboration. UML provides class diagram, object diagram to support this.</li>
+<li><strong>Implementation</strong> defines the components assembled together to make a complete physical system. UML component diagram is used to support implementation perspective.</li>
+<li><strong>Process</strong> defines the flow of the system. So the same elements as used in Design are also used to support this perspective.</li>
+<li><strong>Deployment</strong> represents the physical nodes of the system that forms the hardware. UML deployment diagram is used to support this perspective.</li>
+</ul>
+<h1 id="modelling-types">Modelling Types</h1>
+<p><sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+<p><img alt="" src="http://static2.creately.com/blog/wp-content/uploads/2012/01/UML-Diagram-Types.png" /></p>
+<h1 id="diagrams">Diagrams</h1>
+<h2 id="usecase-diagram">Usecase Diagram</h2>
+<p><sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup> <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup></p>
+<blockquote>
+<p>A <code>use case</code> diagram at its simplest is a <strong>representation of a user's interaction</strong> with the system that shows the <strong>relationship between the user</strong> and the <strong>different use cases</strong> in which the user is involved.</p>
+<p>A use case diagram can identify the different types of users of a system and the different use cases and will often be accompanied by other types of diagrams as well.</p>
+</blockquote>
+<p><a href="https://youtu.be/XpqyiBR0lJ4?t=455"></a></p>
+<p><img alt="" src="http://agilemodeling.com/images/models/useCaseDiagram.jpg" /></p>
+<p>Use case diagrams depict:</p>
+<ul>
+<li><strong>Use cases.</strong> A use case describes a sequence of actions that provide something of measurable value to an actor and is drawn as a horizontal ellipse. <small><a href="http://www.uml-diagrams.org/use-case.html">(example)</a></small></li>
+<li><strong>Actors.</strong> An actor is a person, organization, or external system that plays a role in one or more interactions with your system. Actors are drawn as stick figures. <small><a href="http://www.uml-diagrams.org/use-case-actor.html">(example)</a></small></li>
+<li><strong>Associations.</strong> Associations between actors and use cases are indicated in use case diagrams by solid lines. An association exists whenever an actor is involved with an interaction described by a use case. Associations are modeled as lines connecting use cases and actors to one another, with an optional arrowhead on one end of the line. The arrowhead is often used to indicating the direction of the initial invocation of the relationship or to indicate the primary actor within the use case. The arrowheads are typically confused with data flow and as a result I avoid their use. <small><a href="http://www.uml-diagrams.org/use-case-actor-association.html">(example)</a></small></li>
+<li><strong>Extend</strong>: Extend is a directed relationship that specifies how and when the behavior defined in usually supplementary (optional) extending use case can be inserted into the behavior defined in the extended use case. <small><a href="http://www.uml-diagrams.org/use-case-extend.html">(example)</a></small></li>
+<li><strong>Include</strong> is a directed relationship between two use cases which is used to show that behavior of the included use case (the addition) is inserted into the behavior of the including (the base) use case. <small><a href="http://www.uml-diagrams.org/use-case-include.html">(example)</a></small></li>
+<li><strong>System boundary boxes</strong> (optional). You can draw a rectangle around the use cases, called the system boundary box, to indicates the scope of your system. Anything within the box represents functionality that is in scope and anything outside the box is not. System boundary boxes are rarely used, although on occasion I have used them to identify which use cases will be delivered in each major release of a system. <small><a href="http://www.agilemodeling.com/artifacts/useCaseDiagram.htm">(example)</a></small></li>
+<li><strong>Packages</strong> (optional). Packages are UML constructs that enable you to organize model elements (such as use cases) into groups. Packages are depicted as file folders and can be used on any of the UML diagrams, including both use case diagrams and class diagrams. I use packages only when my diagrams become unwieldy, which generally implies they cannot be printed on a single page, to organize a large diagram into smaller ones. <small><a href="http://www.agilemodeling.com/artifacts/useCaseDiagram.htm">(example)</a></small></li>
+</ul>
+<h2 id="class-diagram">Class Diagram</h2>
+<p><sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup></p>
+<blockquote>
+<p>In software engineering, a class diagram in the Unified Modeling Language (UML) is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among objects.</p>
+</blockquote>
+<p><img alt="" src="http://agilemodeling.com/images/models/classDiagramInitial.jpg" /></p>
+<h4 id="331-uml-association-9-10">3.3.1 UML Association <sup id="fnref:9"><a class="footnote-ref" href="#fn:9" rel="footnote">9</a></sup> <sup id="fnref:10"><a class="footnote-ref" href="#fn:10" rel="footnote">10</a></sup></h4>
+<p><img alt="" src="http://www.uml-diagrams.org/association/class-association-overview.png" /></p>
+<p><strong>Association</strong></p>
+<p>Association is reference based relationship between two classes. Here a class A holds a class level reference to class B. Association can be represented by a line between these classes with an arrow indicating the navigation direction. In case arrow is on the both sides, association has bidirectional navigation.</p>
+<p><img alt="" src="https://nirajrules.files.wordpress.com/2011/07/association.png?w=630" /></p>
+<p><strong>Aggregation</strong></p>
+<p><code>Aggregation (shared aggregation)</code> is a "weak" form of aggregation when part instance is independent of the composite:</p>
+<ul>
+<li>the same (shared) part could be included in several composites, and</li>
+<li>if composite is deleted, shared parts may still exist.</li>
+</ul>
+<p>Shared aggregation is shown as binary association decorated with a hollow diamond as a terminal adornment at the aggregate end of the association line. The diamond should be noticeably smaller than the diamond notation for N-ary associations. Shared aggregation is shown as binary association decorated with a hollow diamond.</p>
+<p><img alt="" src="http://lh3.googleusercontent.com/_aUOgqE3fGXc/Sh32cQ4pjVI/AAAAAAAAAaY/2lq7mZumWM8/s1600/image%5B24%5D.png" /></p>
+<p><strong>Composition</strong></p>
+<p>Composition (composite aggregation) is a "strong" form of aggregation. Composition requirements/features listed in UML specification are:</p>
+<ul>
+<li>it is a whole/part relationship,</li>
+<li>it is binary association</li>
+<li>part could be included in at most one composite (whole) at a time, and</li>
+<li>if a composite (whole) is deleted, all of its composite parts are "normally" deleted with it.</li>
+</ul>
+<p>Note, that UML does not define how, when and specific order in which parts of the composite are created. Also, in some cases a part can be removed from a composite before the composite is deleted, and so is not necessarily deleted as part of the composite.</p>
+<p><img alt="" src="http://lh3.ggpht.com/_aUOgqE3fGXc/Sh35Y1ga0lI/AAAAAAAAAas/9FnQ1sRJObY/image_thumb%5B2%5D.png?imgmax=800" /></p>
+<p><strong>Aggregation vs Composition</strong></p>
+<p><sup id="fnref:11"><a class="footnote-ref" href="#fn:11" rel="footnote">11</a></sup></p>
+<p><img alt="" src="https://atomicobject.com/uploadedImages/archive/images/UML_CompositionAggregation.png" /></p>
+<h2 id="sequence-diagram">Sequence Diagram</h2>
+<p><sup id="fnref:7"><a class="footnote-ref" href="#fn:7" rel="footnote">7</a></sup></p>
+<blockquote>
+<p>A Sequence diagram is an interaction diagram that shows how processes operate with one another and in what order. It is a construct of a Message Sequence Chart.</p>
+<p>A sequence diagram shows object interactions arranged in time sequence.</p>
+<p>It depicts the objects and classes involved in the scenario and the sequence of messages exchanged between the objects needed to carry out the functionality of the scenario. Sequence diagrams are typically associated with use case realizations in the Logical View of the system under development. Sequence diagrams are sometimes called event diagrams or event scenarios.</p>
+</blockquote>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/CheckEmail.svg/469px-CheckEmail.svg.png" /></p>
+<h2 id="activity-diagram">Activity Diagram</h2>
+<p><sup id="fnref:8"><a class="footnote-ref" href="#fn:8" rel="footnote">8</a></sup></p>
+<p>Activity diagrams are graphical representations of workflows of stepwise activities and actions with support for choice, iteration and concurrency. In the Unified Modeling Language, activity diagrams are intended to model both computational and organizational processes (i.e. workflows). Activity diagrams show the overall flow of control.</p>
+<p><img alt="" src="https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/uml/activity-diagram/login-activity-diagram-525x471.jpg" /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://www.tutorialspoint.com/uml/uml_architecture.htm">UML - Architecture</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://www.tutorialspoint.com/uml/uml_modeling_types.htm">UML - Modeling Types</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://www.tutorialspoint.com/uml/uml_use_case_diagram.htm">UML - Use Case Diagrams</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://en.wikipedia.org/wiki/Use_Case_Diagram">Use Case Diagram</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="http://www.uml-diagrams.org/use-case-actor-association.html">UML Association Between Actor and Use Case</a>&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://en.wikipedia.org/wiki/Class_diagram">Class diagram</a>&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://en.wikipedia.org/wiki/Sequence_diagram">Sequence diagram</a>&#160;<a class="footnote-backref" href="#fnref:7" rev="footnote" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://en.wikipedia.org/wiki/Activity_diagram">Activity diagram</a>&#160;<a class="footnote-backref" href="#fnref:8" rev="footnote" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="http://www.uml-diagrams.org/association.html#aggregation">Aggregation</a>&#160;<a class="footnote-backref" href="#fnref:9" rev="footnote" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:10">
+<p><a href="http://aviadezra.blogspot.com/2009/05/uml-association-aggregation-composition.html">UML Class Diagram: Association, Aggregation and Composition</a>&#160;<a class="footnote-backref" href="#fnref:10" rev="footnote" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:11">
+<p><a href="https://atomicobject.com/resources/oo-programming/object-oriented-aggregation">Lecture Notes on Object-Oriented Programming: Object Oriented Aggregation</a>&#160;<a class="footnote-backref" href="#fnref:11" rev="footnote" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
