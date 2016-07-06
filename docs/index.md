@@ -1,39 +1,34 @@
-# Agile
+![](http://palletops.com/images/docker-large-h-trans.png)
 
-### What is Agile? [^2]
+>  Docker is an open platform for building, shipping and running distributed applications. It gives programmers, development teams and operations engineers the common toolbox they need to take advantage of the distributed and networked nature of modern applications.
 
-Agile methodology is an alternative to traditional project management, typically used in software development. It helps teams respond to unpredictability through incremental, iterative work cadences, known as sprints. Agile methodologies are an alternative to waterfall, or traditional sequential development.
+# Content
 
-### Agile Manifesto
+* [Part 1: Docker: Why and What?](http://magizbox.com/index.php/tools/docker/docker-why-and-what/)
+  * Docker vs Virtual Machine
+  * Docker Architecture (Images, Containers, Registry and Repository, Orchestration)
+  * Installation
+  * Usage
+* [Part 2: Docker Dev](http://magizbox.com/index.php/tools/docker/docker-dev/)
+  * Create new image
+* [Part 3: Docker Ops](http://magizbox.com/index.php/tools/docker/docker-ops/)
+  * Manage containers
+  * Manage images
+* [Part 4: Docker More?](http://magizbox.com/index.php/tools/docker/docker-more/)
 
-![](http://image.slidesharecdn.com/2015-02-02agilecontentmeetup-150203031956-conversion-gate01/95/tips-for-agile-content-trail-blazers-2-638.jpg?cb=1422934259)
+[^2]: <a href="https://docs.docker.com/userguide/dockerimages/">Get started with images</a>
+[^3]: <a href="https://docs.docker.com/articles/basics/">Get started with containers</a>
 
-### Scrum Framework
+[^5]: Docker Training, Introduction to Docker
+[^6]: [How to remove unused Docker containers and images](https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b)
 
-![](http://orbitvn.com/wp-content/uploads/2016/01/Scrum_Framework.jpg)
+## Talks
 
-A manifesto for small teams doing important work [^4]
+* <a href="https://www.youtube.com/watch?v=D0Guil0bGmA">Getting Started with Apache Spark and Neo4j Using Docker Compose</a>
+* <a href="https://www.youtube.com/watch?v=UV3cw4QLJLs">Docker fundamentals: basics, storage, networking - Introduction to Docker</a>
 
-### What is the difference between Scrum and Agile Development? [^1]
+## Courses
 
-Scrum is just one of the many iterative and incremental agile software development method. You can find here a very detailed description of the process.
+**Docker Training**, Official from Docker
 
-In the SCRUM methodology a sprint is the basic unit of development. Each sprint starts with a planning meeting, where the tasks for the sprint are identified and an estimated commitment for the sprint goal is made. A Sprint ends with a review or retrospective meeting where the progress is reviewed and lessons for the next sprint are identified. During each sprint, the team creates finished portions of a product.
-
-In the Agile methods each iteration involves a team working through a full software development cycle, including planning, requirements analysis, design, coding, unit testing, and acceptance testing when a working product is demonstrated to stakeholders.
-
-### Agile Stories and Teasers
-
-* [2011, PRESENTATION: HOW OUR TEAM LIVES SCRUM](http://blog.bbv.ch/2011/02/02/presentation-scrum-at-bbv-software-services-ag/)
-* [2010, The real life of a Scrum team – with photos](https://blogs.perficient.com/multi-shoring/blog/2010/08/26/the-real-life-of-a-perficient-scrum-team/)
-* [2009, How Scrum Helped Our Team](https://www.scrumalliance.org/community/articles/2009/2009-june/how-scrum-helped-our%C2%A0team)
-
-### Agile Tools [^3]
-
-* Agilefant (4/ 3/ 3)
-
-[^1]: [What is the difference between Scrum and Agile Development?](http://stackoverflow.com/questions/11469358/what-is-the-difference-between-scrum-and-agile-development)
-[^2]: [Agile Methodology](http://agilemethodology.org/)
-[^3]: [agile-tools.net/](http://www.agile-tools.net/)
-[^4]: [A manifesto for small teams doing important work](http://sethgodin.typepad.com/seths_blog/2016/02/a-manifesto-for-small-teams-doing-important-work.html)
-
+* [Introduction to Docker](https://training.docker.com/introduction-to-docker)

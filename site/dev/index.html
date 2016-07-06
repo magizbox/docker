@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Docker</title>
+	<title>dev image - Docker</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
         
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Docker</a>
+            <a class="navbar-brand" href="..">Docker</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -53,37 +53,37 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="intro/">Introduction</a>
+                        <a href="../intro/">Introduction</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dev <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="dev/">dev image</a>
+<li class="active">
+    <a href="./">dev image</a>
 </li>
 
                         
                             
 <li >
-    <a href="dockerfile/">dockerfile</a>
+    <a href="../dockerfile/">dockerfile</a>
 </li>
 
                         
                             
 <li >
-    <a href="compose/">dockercompose</a>
+    <a href="../compose/">dockercompose</a>
 </li>
 
                         
@@ -93,13 +93,13 @@
                 
                 
                     <li >
-                        <a href="swarm/">Swarm</a>
+                        <a href="../swarm/">Swarm</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="labs/">Labs</a>
+                        <a href="../labs/">Labs</a>
                     </li>
                 
                 
@@ -113,13 +113,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../intro/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="intro/">
+                        <a rel="prev" href="../dockerfile/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -135,59 +135,79 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#content">Content</a></li>
+        <li class="main active"><a href="#dev">Dev</a></li>
         
-            <li><a href="#talks">Talks</a></li>
+            <li><a href="#create-new-image">Create New Image</a></li>
         
-            <li><a href="#courses">Courses</a></li>
+            <li><a href="#importexport-container-1-2">Import/Export Container 1 2</a></li>
+        
+            <li><a href="#saveload-image-3-4">Save/Load Image 3 4</a></li>
+        
+            <li><a href="#push-images-to-docker-hub">Push Images to Docker Hub</a></li>
+        
+            <li><a href="#windows">Windows</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><img alt="" src="http://palletops.com/images/docker-large-h-trans.png" /></p>
-<blockquote>
-<p>Docker is an open platform for building, shipping and running distributed applications. It gives programmers, development teams and operations engineers the common toolbox they need to take advantage of the distributed and networked nature of modern applications.</p>
-</blockquote>
-<h1 id="content">Content</h1>
-<ul>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-why-and-what/">Part 1: Docker: Why and What?</a></li>
-<li>Docker vs Virtual Machine</li>
-<li>Docker Architecture (Images, Containers, Registry and Repository, Orchestration)</li>
-<li>Installation</li>
-<li>Usage</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-dev/">Part 2: Docker Dev</a></li>
-<li>Create new image</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-ops/">Part 3: Docker Ops</a></li>
-<li>Manage containers</li>
-<li>Manage images</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-more/">Part 4: Docker More?</a></li>
-</ul>
-<h2 id="talks">Talks</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=D0Guil0bGmA">Getting Started with Apache Spark and Neo4j Using Docker Compose</a></li>
-<li><a href="https://www.youtube.com/watch?v=UV3cw4QLJLs">Docker fundamentals: basics, storage, networking - Introduction to Docker</a></li>
-</ul>
-<h2 id="courses">Courses</h2>
-<p><strong>Docker Training</strong>, Official from Docker</p>
-<ul>
-<li><a href="https://training.docker.com/introduction-to-docker">Introduction to Docker</a></li>
-</ul>
+<h1 id="dev">Dev</h1>
+<h3 id="create-new-image">Create New Image</h3>
+<pre><code># Create new image by commit
+docker commit &lt;container ID&gt; &lt;yourname&gt;/curl:1.0
+
+# Build image
+docker build -t ubuntu/test:1.0 .
+docker build -t ubuntu/test:1.0 --no-cache .
+</code></pre>
+
+<h3 id="importexport-container-1-2">Import/Export Container <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">1</a></sup> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">2</a></sup></h3>
+<p>Export the contents of a container's filesystem as a tar archive</p>
+<pre><code>docker export [OPTIONS] CONTAINER
+docker export red_panda &gt; latest.tar
+
+docker import file|URL|- [REPOSITORY[:TAG]]
+docker import http://example.com/exampleimage.tgz
+cat exampleimage.tgz | docker import - exampleimagelocal:new
+</code></pre>
+
+<h3 id="saveload-image-3-4">Save/Load Image <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">3</a></sup> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">4</a></sup></h3>
+<p>Save one or more images to a tar archive</p>
+<pre><code>docker save [OPTIONS] IMAGE [IMAGE...]
+docker save busybox &gt; busybox.tar.gz
+
+docker load [OPTIONS]
+docker load &lt; busybox.tar.gz
+</code></pre>
+
+<h3 id="push-images-to-docker-hub">Push Images to Docker Hub</h3>
+<pre><code># Login to docker hub
+docker login --username=yourhubusername --email=youremail@company.com
+
+# push docker
+docker push [repo:tag]
+
+# tag an image into a repository
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+</code></pre>
+
+<h3 id="windows">Windows</h3>
+<p><a href="http://blog.pavelsklenar.com/5-useful-docker-tip-and-tricks-on-windows/">5 Useful Docker Tips and Tricks on Windows</a></p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:2">
-<p><a href="https://docs.docker.com/userguide/dockerimages/">Get started with images</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
 <li id="fn:3">
-<p><a href="https://docs.docker.com/articles/basics/">Get started with containers</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://docs.docker.com/engine/reference/commandline/export/">Commandline Reference: export</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.docker.com/engine/reference/commandline/import/">Commandline Reference: import</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Docker Training, Introduction to Docker&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://docs.docker.com/engine/reference/commandline/save/">Commandline Reference: save</a>&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b">How to remove unused Docker containers and images</a>&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://docs.docker.com/engine/reference/commandline/load/">Commandline Reference: load</a>&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
@@ -200,12 +220,12 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
@@ -234,8 +254,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2016-07-06 23:24:32.952000
--->

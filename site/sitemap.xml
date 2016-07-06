@@ -4,31 +4,53 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-07-06</lastmod>
+     <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/team/</loc>
-     <lastmod>2016-07-06</lastmod>
+     <loc>None/intro/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/dev/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/dockerfile/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/compose/</loc>
+     <lastmod>2016-07-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/swarm/</loc>
+     <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/artifacts/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/meetings/</loc>
-     <lastmod>2016-07-06</lastmod>
+     <loc>None/labs/</loc>
+     <lastmod>2016-07-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

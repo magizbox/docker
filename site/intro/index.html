@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Introduction - Docker</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Docker</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Introduction</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dev <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../dev/">dev image</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../dockerfile/">dockerfile</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compose/">dockercompose</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../swarm/">Swarm</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../labs/">Labs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../dev/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#docker-promise-6-7">Docker Promise 6 7</a></li>
+        
+    
+        <li class="main "><a href="#1-docker-architecture-3">1. Docker Architecture 3</a></li>
+        
+    
+        <li class="main "><a href="#21-docker-images-2">2.1 Docker Images 2</a></li>
+        
+    
+        <li class="main "><a href="#22-docker-containers-3">2.2 Docker Containers 3</a></li>
+        
+            <li><a href="#23-registry-and-repository">2.3 Registry and Repository</a></li>
+        
+            <li><a href="#23-docker-networking-5">2.3 Docker Networking 5</a></li>
+        
+    
+        <li class="main "><a href="#3-docker-orchestration-2">3. Docker Orchestration 2</a></li>
+        
+    
+        <li class="main "><a href="#installation">Installation</a></li>
+        
+    
+        <li class="main "><a href="#usage">Usage</a></li>
+        
+            <li><a href="#lab-search-for-images-on-docker-hub">Lab: Search for Images on Docker Hub</a></li>
+        
+    
+        <li class="main "><a href="#installation-ubuntu">Installation: Ubuntu</a></li>
+        
+    
+        <li class="main "><a href="#installation-1">Installation 1</a></li>
+        
+            <li><a href="#installation-1_1">Installation 1</a></li>
+        
+    
+        <li class="main "><a href="#docker-centos-7">Docker: CentOS 7</a></li>
+        
+            <li><a href="#installation-1_2">Installation 1</a></li>
+        
+            <li><a href="#kitematic">Kitematic</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p>[embed]https://www.youtube.com/watch?v=cRczhEvSH2A[/embed]</p>
+<h2 id="docker-promise-6-7">Docker Promise <sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7" rel="footnote">7</a></sup></h2>
+<blockquote>
+<p>Docker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.</p>
+</blockquote>
+<p><img alt="" src="https://www.docker.com/sites/default/files/enterprise/docker_diagram51.svg" /></p>
+<p><strong>Build</strong>: Docker allows you to compose your application from microservices, without worrying about inconsistencies between development and production environments, and without locking into any platform or language.</p>
+<p><code>Composable</code> You want to be able to split up your application into multiple services.</p>
+<p><strong>Ship</strong>: Docker lets you design the entire cycle of application development, testing and distribution, and manage it with a consistent user interface.</p>
+<p><code>Portable across providers</code> You want to be able to move your application between different cloud providers and your own servers, or run it across several providers.</p>
+<p><strong>Run</strong>: Docker offers you the ability to deploy scalable services, securely and reliably, on a wide variety of platforms.</p>
+<p><code>Portable across environments</code> You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.</p>
+<h2 id="1-docker-architecture-3">1. Docker Architecture <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h2>
+<p><img alt="" src="https://docs.docker.com/v1.8/article-img/architecture.svg" /></p>
+<p><strong>Docker Containers vs Virtual Hypervisor Model</strong> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<p><img src="http://www.eweek.com/imagesvr_ce/8781/DockerFacts_3.jpg" alt="" /></p>
+<p>In the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.</p>
+<p><strong>Docker Images and Docker Containers</strong></p>
+<p><img src="http://devopscube.com/wp-content/uploads/2015/02/docker-filesystems-busyboxrw.png" alt="" /></p>
+<h2 id="21-docker-images-2">2.1 Docker Images <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h2>
+<blockquote>
+<p>Docker images are the <strong>build component</strong> of Docker.</p>
+</blockquote>
+<p><em>For example, an image could contain an Ubuntu operating system with Apache and your web application installed. Images are used to create Docker containers.</em></p>
+<p>Docker provides a simple way to build new images or update existing images, or you can download Docker images that other people have already created.</p>
+<p>Built by you or other Docker users</p>
+<p>Stored in the Docker Hub or your local Registry</p>
+<p><strong>Images Tags</strong></p>
+<ul>
+<li>Images are specified by repository:tag</li>
+<li>The same image my have multiple tags</li>
+<li>The default tag is <code>lastest</code></li>
+<li>Look up the repository on Docker to see what tags are available</li>
+</ul>
+<h2 id="22-docker-containers-3">2.2 Docker Containers <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h2>
+<blockquote>
+<p>Docker containers are the <strong>run component</strong> of Docker.</p>
+</blockquote>
+<p>Docker containers are similar to a directory. A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image. Docker containers can be run, started, stopped, moved, and deleted. Each container is an isolated and secure application platform.</p>
+<h3 id="23-registry-and-repository">2.3 Registry and Repository</h3>
+<blockquote>
+<p>Docker registries are the <strong>distribution component</strong> of Docker.</p>
+</blockquote>
+<p>Docker registries</p>
+<p>Docker registries hold images. These are public or private stores from which you upload or download images. The public Docker registry is provided with the Docker Hub. It serves a huge collection of existing images for your use. These can be images you create yourself or you can use images that others have previously created.
+Docker Hub</p>
+<p>Docker Hub is the public registry that contains a large number of images available for your use.</p>
+<h3 id="23-docker-networking-5">2.3 Docker Networking <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup></h3>
+<ol>
+<li>Docker use DNS instead <code>etc/hosts</code></li>
+</ol>
+<h2 id="3-docker-orchestration-2">3. Docker Orchestration <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h2>
+<ul>
+<li>Three tools for orchestrating distributed applications with Docker</li>
+<li>Docker Machine<ul>
+<li>Tool that provisions Docker hosts and installs the Docker Engine on them</li>
+</ul>
+</li>
+<li>Docker Swarm<ul>
+<li>Tool that clusters many Engines and schedules containers</li>
+</ul>
+</li>
+<li>Docker Compose<ul>
+<li>Tool to create and manage multi-container applications</li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Docker only supports <code>CentOS 7,  Windows 7.1, 8/8.1, Mac OSX 10.8</code> <code>64bit</code></p>
+<p><a href="http://magizbox.com/index.php/tools/docker/docker-why-and-what/docker-windows/">Windows</a>, <a href="http://magizbox.com/index.php/tools/docker/docker-why-and-what/docker-centos-7/">CentOS</a></p>
+<h2 id="usage">Usage</h2>
+<h4 id="lab-search-for-images-on-docker-hub">Lab: Search for Images on Docker Hub</h4>
+<h2 id="installation-ubuntu">Installation: Ubuntu</h2>
+<h2 id="installation-1">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h2>
+<p><code>ubuntu 14.04</code></p>
+<p><strong>Prerequisites</strong></p>
+<pre><code>apt-get update
+apt-get install apt-transport-https ca-certificates
+
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</code></pre>
+
+<p>Edit <code>/etc/apt/sources.list.d/docker.list</code></p>
+<pre><code>deb https://apt.dockerproject.org/repo ubuntu-trusty main
+</code></pre>
+
+<pre><code>apt-get update
+apt-get purge lxc-docker
+apt-cache policy docker-engine
+</code></pre>
+
+<p><strong>Install docker</strong></p>
+<pre><code>apt-get update
+apt-get install -y --force-yes docker-engine
+service docker start
+</code></pre>
+
+<p><strong>Run Docker</strong></p>
+<pre><code>docker run hello-world
+docker info
+docker version
+</code></pre>
+
+<h3 id="installation-1_1">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h3>
+<p>https://www.docker.com/products/docker-toolbox</p>
+<ol>
+<li>Go to the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a> page.</li>
+<li>Click the installer link to download.</li>
+<li>Install Docker Toolbox by double-clicking the installer.</li>
+</ol>
+<h2 id="docker-centos-7">Docker: CentOS 7</h2>
+<h3 id="installation-1_2">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h3>
+<p>Install Docker</p>
+<pre><code># make sure your existing yum packages are up-to-date.
+sudo yum -y update
+
+# add docker repo
+sudo tee /etc/yum.repos.d/docker.repo &lt;&lt;-'EOF'
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+EOF
+
+# install the Docker package.
+sudo yum install -y docker-engine
+
+# start the Docker daemon
+sudo service docker start
+
+# verify
+sudo docker run hello-world
+</code></pre>
+
+<p>Install Docker Compose</p>
+<pre><code>sudo yum install epel-release
+sudo yum install -y python-pip
+
+sudo pip install docker-compose
+</code></pre>
+
+<p><a href="https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe">Docker 1.10.3</a></p>
+<h3 id="kitematic">Kitematic</h3>
+<h4 id="port-forwarding">Port Forwarding</h4>
+<p>Open Virtualbox</p>
+<h4 id="volumes">Volumes</h4>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.docker.com/windows/step_one/">Install Docker for Windows</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://training.docker.com/self-paced-training">Self Paced Training, Docker Fundamentals</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.docker.com/v1.8/introduction/understanding-docker/">Understand the architecture</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.docker.com/introduction/understanding-docker/">Understand the architecture</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://www.youtube.com/watch?v=rFQqiuFIjms">Docker Compose and Networking</a>&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://www.docker.com/">https://www.docker.com/</a>&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/">Orchestrating Docker with Machine, Swarm and Compose</a>&#160;<a class="footnote-backref" href="#fnref:7" rev="footnote" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

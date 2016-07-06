@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Docker</title>
+	<title>dockercompose - Docker</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
         
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Docker</a>
+            <a class="navbar-brand" href="..">Docker</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -53,37 +53,37 @@
                 <ul class="nav navbar-nav">
                 
                 
-                    <li class="active">
-                        <a href=".">Home</a>
+                    <li >
+                        <a href="..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="intro/">Introduction</a>
+                        <a href="../intro/">Introduction</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dev <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="dev/">dev image</a>
+    <a href="../dev/">dev image</a>
 </li>
 
                         
                             
 <li >
-    <a href="dockerfile/">dockerfile</a>
+    <a href="../dockerfile/">dockerfile</a>
 </li>
 
                         
                             
-<li >
-    <a href="compose/">dockercompose</a>
+<li class="active">
+    <a href="./">dockercompose</a>
 </li>
 
                         
@@ -93,13 +93,13 @@
                 
                 
                     <li >
-                        <a href="swarm/">Swarm</a>
+                        <a href="../swarm/">Swarm</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="labs/">Labs</a>
+                        <a href="../labs/">Labs</a>
                     </li>
                 
                 
@@ -113,13 +113,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../dockerfile/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="intro/">
+                        <a rel="prev" href="../swarm/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -135,59 +135,78 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#content">Content</a></li>
-        
-            <li><a href="#talks">Talks</a></li>
-        
-            <li><a href="#courses">Courses</a></li>
+        <li class="main active"><a href="#docker-compose-1">Docker-Compose 1</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><img alt="" src="http://palletops.com/images/docker-large-h-trans.png" /></p>
+<h2 id="docker-compose-1">Docker-Compose <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h2>
 <blockquote>
-<p>Docker is an open platform for building, shipping and running distributed applications. It gives programmers, development teams and operations engineers the common toolbox they need to take advantage of the distributed and networked nature of modern applications.</p>
+<p>Compose a symphony</p>
 </blockquote>
-<h1 id="content">Content</h1>
-<ul>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-why-and-what/">Part 1: Docker: Why and What?</a></li>
-<li>Docker vs Virtual Machine</li>
-<li>Docker Architecture (Images, Containers, Registry and Repository, Orchestration)</li>
-<li>Installation</li>
-<li>Usage</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-dev/">Part 2: Docker Dev</a></li>
-<li>Create new image</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-ops/">Part 3: Docker Ops</a></li>
-<li>Manage containers</li>
-<li>Manage images</li>
-<li><a href="http://magizbox.com/index.php/tools/docker/docker-more/">Part 4: Docker More?</a></li>
-</ul>
-<h2 id="talks">Talks</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=D0Guil0bGmA">Getting Started with Apache Spark and Neo4j Using Docker Compose</a></li>
-<li><a href="https://www.youtube.com/watch?v=UV3cw4QLJLs">Docker fundamentals: basics, storage, networking - Introduction to Docker</a></li>
-</ul>
-<h2 id="courses">Courses</h2>
-<p><strong>Docker Training</strong>, Official from Docker</p>
-<ul>
-<li><a href="https://training.docker.com/introduction-to-docker">Introduction to Docker</a></li>
-</ul>
+<p>Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a Compose file to configure your application’s services. Then, using a single command, you create and start all the services from your configuration. To learn more about all the features of Compose see the list of features.
+Docker Compose <code>Describes the components of an application</code></p>
+<p>Box your component</p>
+<pre><code>.component/
+├── docker-compose.yml
+├── app-1/
+│   ├── app/
+│   │   ├── file-1
+│   │   └── file-2
+│   ├── Dockerfile
+│   └── run.sh
+└── app-2/
+    ├── app/
+    │   ├── file-1
+    │   └── file-2
+    ├── Dockerfile
+    └── run.sh
+</code></pre>
+
+<p><strong>Services</strong></p>
+<p><strong>Networks</strong></p>
+<p><code>network_mode</code>, <code>ports</code>, <code>external_hosts</code>, <code>link</code>, <del datetime="2016-04-06T15:21:55+00:00"><code>net</code></del></p>
+<pre><code>network_mode: &quot;bridge&quot;
+network_mode: &quot;host&quot;
+network_mode: &quot;service:[service_name]&quot;
+network_mode: &quot;container:[container name/id]&quot;
+</code></pre>
+
+<p><strong>Volumes</strong></p>
+<p><strong>Usage</strong></p>
+<pre><code># rebuild your images
+docker-compose build
+
+# build or rebuild services
+docker-compose build [SERVICE...]
+docker-compose build --no-cache database
+
+
+# start all the containers
+docker-compose up -d
+docker-compose up
+
+# stops the containers
+docker-compose stop [CONTAINER]
+</code></pre>
+
+<p>Keep a container running in compose <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+<p>You can use one of those lines</p>
+<pre><code>command: &quot;top&quot;
+command: &quot;tail -f /dev/null&quot;
+command: &quot;sleep infinity&quot;
+</code></pre>
+
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:1">
+<p><a href="https://www.youtube.com/watch?v=EReEOMS7gsk">Docker Compose Files Version 2</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:2">
-<p><a href="https://docs.docker.com/userguide/dockerimages/">Get started with images</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://docs.docker.com/articles/basics/">Get started with containers</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p>Docker Training, Introduction to Docker&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:6">
-<p><a href="https://gist.github.com/ngpestelos/4fc2e31e19f86b9cf10b">How to remove unused Docker containers and images</a>&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://github.com/docker/compose/issues/1926">github issue, Keep a container running in compose</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
@@ -200,12 +219,12 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
@@ -234,8 +253,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 0.15.3
-Build Date UTC : 2016-07-06 23:24:32.952000
--->

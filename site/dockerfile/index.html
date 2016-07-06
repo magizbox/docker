@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>dockerfile - Docker</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Docker</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../intro/">Introduction</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dev <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../dev/">dev image</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">dockerfile</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../compose/">dockercompose</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../swarm/">Swarm</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../labs/">Labs</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../dev/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../compose/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#dockerfile">Dockerfile</a></li>
+        
+            <li><a href="#24-linking-containers">2.4 Linking Containers</a></li>
+        
+            <li><a href="#operating-systems-for-docker-1-2">Operating Systems for Docker 1 2</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="dockerfile">Dockerfile</h2>
+<blockquote>
+<p>Build a song with Dockerfile</p>
+</blockquote>
+<p>A dockerfile is a configuration file that contains instructions for building a Docker image.</p>
+<ul>
+<li>Provides a more effective way to build images compared to using docker commit</li>
+<li>Easily fits into your continuous integration and deployment process.</li>
+</ul>
+<p><strong>Command Line</strong></p>
+<pre><code># `FROM` instruction specifies what the base image should be
+FROM java:7
+
+# `RUN` instruction specifies a command to execute
+RUN apt-get update &amp;&amp; apt-get install -y \
+      curl \
+      vim \
+      openjdk-7-jdk
+
+# CMD
+# Defines a default command to execute when a container is created
+CMD [&quot;ping&quot;, &quot;127.0.0.1&quot;, &quot;-c&quot;, &quot;30&quot;]
+
+# ENTRYPOINT
+# Defines the command that will run when a container is executed
+ENTRYPOINT [&quot;ping&quot;]
+</code></pre>
+
+<p><strong>Volumes</strong></p>
+<blockquote>
+<p>Configuration Files and Directories**</p>
+</blockquote>
+<pre><code>COPY &lt;src&gt;... &lt;dest&gt;
+COPY hom* /mydir/        # adds all files starting with &quot;hom&quot;
+COPY hom?.txt /mydir/    # ? is replaced with any single character, e.g., &quot;home.txt&quot;
+</code></pre>
+
+<p><strong>Networking</strong></p>
+<ul>
+<li>Ports still need to be mapped when container is executed</li>
+</ul>
+<pre><code># EXPOSE
+# Configures which ports a container will listen on at runtime
+FROM ubuntu:14.04
+RUN apt-get update
+RUN apt-get install -y nginx
+
+EXPOSE 80 443
+
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</code></pre>
+
+<h3 id="24-linking-containers">2.4 Linking Containers</h3>
+<blockquote>
+<p>Example: Web app container and Database container</p>
+</blockquote>
+<p>Linking is a communication method between containers which allows them to securely transfer data from one to another</p>
+<ul>
+<li>Source and recipient containers</li>
+<li>Recipient containers have access to data on source containers</li>
+<li>Links are established based on container names</li>
+</ul>
+<p><strong>Create a Link</strong></p>
+<ol>
+<li>Create the source container first</li>
+<li>
+<p>Create the recipient container and use the <code>--link</code> option</p>
+</li>
+<li>
+<p><strong>Best practice</strong> - give your containers meaningful names</p>
+</li>
+</ol>
+<pre><code>Create the source container using the postgres
+docker run -d --name database postgres
+
+Create the recipient container and link it
+docker run -d -P --name website --link database:db nginx
+</code></pre>
+
+<p><strong>Uses of Linking</strong></p>
+<ul>
+<li>Containers can talk to each other without having to expose ports to the host</li>
+<li>Essential for micro service application architecture</li>
+<li>Example:<ul>
+<li>Container with the Tomcat running</li>
+<li>Container with the MySQL running</li>
+<li>Application on Tomcat needs to connect to MySQL</li>
+</ul>
+</li>
+</ul>
+<h3 id="operating-systems-for-docker-1-2">Operating Systems for Docker <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h3>
+<table>
+<tr>
+<th>Operating System</td>
+<th>Features</td>
+</tr>
+<tr>
+<td>CoreOS</td>
+<td>Service Discovery, Cluster management, Auto-updates<br/>
+CoreOS is designed for security, consistency, and reliability. Instead of installing packages via yum or apt, CoreOS uses Linux containers to manage your services at a higher level of abstraction. A single service’s code and all dependencies are packaged within a container that can be run on one or many CoreOS machines</td>
+</tr>
+</table>
+
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://blog.docker.com/2015/02/the-new-minimalist-operating-systems/">The New Minimalist Operating Systems</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://bobcares.com/blog/top-5-operating-systems-for-your-docker-infrastructure/">Top 5 operating systems for your Docker infrastructure</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
