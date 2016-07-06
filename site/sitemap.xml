@@ -11,67 +11,23 @@
 
     
     <url>
-     <loc>None/data_algorithm/</loc>
+     <loc>None/team/</loc>
      <lastmod>2016-07-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
-        
     <url>
-     <loc>None/database/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/db_sql/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/db_mysql/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/db_redis/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>None/networking/</loc>
+     <loc>None/artifacts/</loc>
      <lastmod>2016-07-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
-        
     <url>
-     <loc>None/oop/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/oop_uml/</loc>
-     <lastmod>2016-07-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>None/os/</loc>
+     <loc>None/meetings/</loc>
      <lastmod>2016-07-06</lastmod>
      <changefreq>daily</changefreq>
     </url>

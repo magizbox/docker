@@ -1,16 +1,8 @@
-site_name: ComputerScience
+site_name: Agile
 pages:
 - "Home": 'index.md'
-- "Data Structure & ALgorithm": 'data_algorithm.md'
-- "Database":
-  - "Introduction": "database.md"
-  - "SQL": "db_sql.md"
-  - "MySQL": "db_mysql.md"
-  - "Redis": "db_redis.md"
-- "Networking": 'networking.md'
-- "OOP":
-  - "Introduction": 'oop.md'
-  - "UML": 'oop_uml.md'
-- "Operating System": 'os.md'
+- "Team": 'team.md'
+- "Artifacts": 'artifacts.md'
+- "Meetings": 'meetings.md'
 markdown_extensions:
     - footnotes
