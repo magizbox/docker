@@ -1,9 +1,16 @@
-site_name: Platform
+site_name: ComputerScience
 pages:
 - "Home": 'index.md'
-- "Chrome Extension": 'extension.md'
-- "Cocos-2dx": 'cocos.md'
-- "Web": 'web.md'
-- "Android": 'android.md'
+- "Data Structure & ALgorithm": 'data_algorithm.md'
+- "Database":
+  - "Introduction": "database.md"
+  - "SQL": "db_sql.md"
+  - "MySQL": "db_mysql.md"
+  - "Redis": "db_redis.md"
+- "Networking": 'networking.md'
+- "OOP":
+  - "Introduction": 'oop.md'
+  - "UML": 'oop_uml.md'
+- "Operating System": 'os.md'
 markdown_extensions:
     - footnotes
