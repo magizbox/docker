@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Labs - Docker</title>
+	<title>Chrome - Docker</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -104,19 +104,19 @@
                 
                 
                 
-                    <li class="active">
-                        <a href="./">Labs</a>
+                    <li >
+                        <a href="../labs/">Labs</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">GUI <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="../gui_chrome/">Chrome</a>
+<li class="active">
+    <a href="./">Chrome</a>
 </li>
 
                         
@@ -135,12 +135,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../ucp/">
+                        <a rel="next" href="../labs/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../gui_chrome/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -156,105 +156,103 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#docker-labs">Docker Labs</a></li>
+        <li class="main active"><a href="#docker-chrome">Docker Chrome</a></li>
+        
+            <li><a href="#dockerfile-1">Dockerfile 1</a></li>
+        
+    
+        <li class="main "><a href="#base-docker-image">Base docker image</a></li>
+        
+    
+        <li class="main "><a href="#install-chrome">Install Chrome</a></li>
+        
+    
+        <li class="main "><a href="#autorun-chrome">Autorun chrome</a></li>
+        
+            <li><a href="#build-image">Build Image</a></li>
+        
+            <li><a href="#docker-run">Docker Run</a></li>
+        
+            <li><a href="#known-issue">Known Issue</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="docker-labs">Docker Labs</h1>
-<p><strong>Lab 1</strong>:</p>
-<pre><code># 1. Create a container from an Ubuntu image and run a bash terminal
-docker run -it ubuntu /bin/bash
-# 2.Inside the container install curl
-apt-get install curl
-# 3. Exit the container terminal
-Ctrl-P
-# 4. Run `docker ps -a` and take not of your container ID
-# 5. Save the container as a new image. For the repository name use &lt;yourname&gt;/curl. Tag the image as 1.0
-# 6. Run `docker images` and verify that you can see your new image
-</code></pre>
-
-<p><strong>Lab 2</strong>: Run Ubntu</p>
-<pre><code>FROM ubuntu:14.04
-RUN apt-get update &amp;&amp; apt-get install -y curl \ vim
-</code></pre>
-
-<pre><code># 1. Go into the test folder and open your Dockerfile from the previous exercise
-
-# 2. Add the folloing line to the end
-CMD [&quot;ping&quot;, &quot;127.0.0.1&quot;, &quot;-c&quot;, &quot;30&quot;]
-
-# 3. Build the image
-docker build -t &lt;yourname&gt;/testimage:1.1 .
-
-# 4. Execute a container from the image and observe the output
-docker run &lt;yourname&gt;/testimage:1.1
-
-# 5. Execute another container from the image and specify the echo command
-docker run &lt;yourname&gt;/testimage:1.1 echo &quot;hello world&quot;
-
-# 6. Observe how the container argument overrides the CMD instruction
-</code></pre>
-
-<p><strong>Lab:</strong></p>
-<pre><code>1) In your home directory, create a folder called test
-2) In the test folder, create a file called `Dockerfile`
-3) In the file, specify to use Ubuntu 14.04 as the base image
-FROM ubuntu:14.04
-4) Write an instruction to install curl and vim after an apt-get update
-RUN apt-get update &amp;&amp; apt-get install -y curl \ vim
-5) Build an image from Dockerfile. Give it the repository &lt;yourname&gt;/testimage and tag it as 1.0
-docker build -t johnnytu/testimage:1.0 .
-6) Create a container using your newly build image and verify that curl and vim are installed.
-</code></pre>
-
-<p><strong>Lab:</strong> Run a container and get Terminal Access</p>
-<pre><code>* Create a container using the ubuntu image and connect to STDIN and a terminal
-docker run -i -t ubuntu /bin/bash
-* In your container, create a new user using your first and last name as the
-username
-addusername username
-* Exit the container
-exit
-* Notice how the container shutdown
-* Once again run:
-docker run -i -t ubuntu /bin/bash
-* Try and find your user `cat /etc/passwd`
-* Noice that it does not exist.
-</code></pre>
-
-<p><strong>Lab:</strong> Run a web application inside a container</p>
-<pre><code># The -P flag to map container ports to host ports
-docker run -d -P tomcat:7
-docker ps     # check your image details runing
-go to &lt;server url&gt;:&lt;port number&gt; # verify that you can see the Tomcat page
-</code></pre>
-
-<p><strong>Lab</strong> Create a Docker Hub Account</p>
-<p><strong>Lab</strong> Push Images to Docker Hub</p>
-<pre><code># Login to docker hub
-$ docker login --username=yourhubusername --email=youremail@company.com
-Password:
-WARNING: login credentials saved in C:\Users\sven\.docker\config.json
-Login Succeeded
-
-# Use `docker push` command
-docker push [repo:tag]
-
-# Local repo must have same name and tag as the Docker Hub repo
-
-# Used  to rename a local image repository before pushing to Docker Hub
-docker tag [image ID] [repo:tag]
-docker tag [local repo:tag] [Docker Hub repo:tag]
-
-&gt; tag image with ID (trainingteam/testexample is the name of repository on Docker hub)
-docker tag edfc212de17b trainingteam/testexample:1.0
-
-&gt; tag image using the local repository tag
-docker tag johnnytu/testimage:1.5 trainingteam/testexample
-</code></pre></div>
+<h1 id="docker-chrome">Docker Chrome</h1>
+<p><strong>Environment</strong></p>
+<ul>
+<li>Ubuntu 14.04</li>
+<li>Docker Engine 1.11</li>
+</ul>
+<p>note: I can't make it run on CentOS.</p>
+<h3 id="dockerfile-1">Dockerfile <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h3>
+<p>[code]</p>
+<h1 id="base-docker-image">Base docker image</h1>
+<p>FROM debian:sid
+MAINTAINER Jessica Frazelle <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#101;&#115;&#115;&#64;&#100;&#111;&#99;&#107;&#101;&#114;&#46;&#99;&#111;&#109;">&#106;&#101;&#115;&#115;&#64;&#100;&#111;&#99;&#107;&#101;&#114;&#46;&#99;&#111;&#109;</a></p>
+<p>ADD https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb /src/google-talkplugin_current_amd64.deb</p>
+<h1 id="install-chrome">Install Chrome</h1>
+<p>RUN echo 'deb http://httpredir.debian.org/debian testing main' &gt;&gt; /etc/apt/sources.list &amp;&amp; \
+    apt-get update &amp;&amp; apt-get install -y \
+    ca-certificates \
+    curl \
+    hicolor-icon-theme \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libv4l-0 \
+    -t testing \
+    fonts-symbola \
+    --no-install-recommends \
+    &amp;&amp; curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    &amp;&amp; echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" &gt; /etc/apt/sources.list.d/google.list \
+    &amp;&amp; apt-get update &amp;&amp; apt-get install -y \
+    google-chrome-stable \
+    --no-install-recommends \
+    &amp;&amp; dpkg -i '/src/google-talkplugin_current_amd64.deb' \
+    &amp;&amp; apt-get purge --auto-remove -y curl \
+    &amp;&amp; rm -rf /var/lib/apt/lists/<em> \
+    &amp;&amp; rm -rf /src/</em>.deb</p>
+<p>COPY local.conf /etc/fonts/local.conf</p>
+<p>RUN rm /etc/apt/sources.list.d/google-chrome.list</p>
+<p>RUN apt-get update
+RUN apt-get install -y libcanberra-gtk-module
+RUN apt-get install -y dbus libdbus-1-dev libxml2-dev dbus-x11</p>
+<h1 id="autorun-chrome">Autorun chrome</h1>
+<p>ENTRYPOINT [ "google-chrome" ]
+CMD [ "--user-data-dir=/data" ]
+[/code]</p>
+<h3 id="build-image">Build Image</h3>
+<p>[code]
+docker build -t chrome .
+[/code]</p>
+<h3 id="docker-run">Docker Run</h3>
+<p>[code]
+xhost +
+docker run -it --net host --cpuset-cpus 0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -v $HOME/chrome/data/Downloads:/root/Downloads -v $HOME/chrome/data/:/data -v /deb/shm:/dev/shm --device /dev/snd chrome --user-data-dir=/data www.google.com
+[/code]</p>
+<h3 id="known-issue">Known Issue</h3>
+<p>Issue 1: Failed to load module "canberra-gtk-module" <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+<p>[code]
+Gtk-Message: Failed to load module "canberra-gtk-module"
+[/code]</p>
+<p>Issue 2: Chrome crash <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></p>
+<p>Solution: add <code>-v /dev/shm:/dev/shm</code></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://hub.docker.com/r/jess/chrome/~/dockerfile/">https://hub.docker.com/r/jess/chrome/~/dockerfile/</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/#comment-2515573749">http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/#comment-2515573749</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://github.com/elgalu/docker-selenium/issues/20">github, UnknownError: session deleted because of page crash from tab crashed</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></div>
             
         </div>
 

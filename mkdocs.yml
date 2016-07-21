@@ -3,10 +3,13 @@ pages:
 - "Home": 'index.md'
 - "Introduction": 'intro.md'
 - "Dev":
-  - "dev image": 'dev.md'
-  - "dockerfile": 'dockerfile.md'
-  - "dockercompose": 'compose.md'
+  - "Docker Image": 'dev.md'
+  - "Dockerfile": 'dockerfile.md'
+  - "Docker Compose": 'compose.md'
 - "Swarm": 'swarm.md'
+- "UCP": 'ucp.md'
 - "Labs": 'labs.md'
+- "GUI":
+  - "Chrome": "gui_chrome.md"
 markdown_extensions:
     - footnotes

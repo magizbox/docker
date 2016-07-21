@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/intro/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>None/dev/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/dockerfile/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/compose/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -42,7 +42,15 @@
     
     <url>
      <loc>None/swarm/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/ucp/</loc>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -50,9 +58,19 @@
     
     <url>
      <loc>None/labs/</loc>
-     <lastmod>2016-07-07</lastmod>
+     <lastmod>2016-07-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+        
+    <url>
+     <loc>None/gui_chrome/</loc>
+     <lastmod>2016-07-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
