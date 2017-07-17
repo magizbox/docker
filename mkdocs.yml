@@ -1,10 +1,11 @@
 site_name: Docker
 pages:
 - "Home": 'index.md'
-- "Installation": 'intro.md'
+- "Get Started": 'get_started.md'
 - "Doc":
   - "Docker Image": 'dev.md'
   - "Dockerfile": 'dockerfile.md'
+  - "Docker Container": 'container.md'
   - "Docker Compose": 'compose.md'
   - "Swarm": 'swarm.md'
   - "UCP": 'ucp.md'

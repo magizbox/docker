@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Installation - Docker</title>
+        <title>Get Started - Docker</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                         <a href="..">Home</a>
                     </li>
                     <li class="active">
-                        <a href="./">Installation</a>
+                        <a href="./">Get Started</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doc <b class="caret"></b></a>
@@ -64,6 +64,10 @@
                             
 <li >
     <a href="../dockerfile/">Dockerfile</a>
+</li>
+                            
+<li >
+    <a href="../container/">Docker Container</a>
 </li>
                             
 <li >
@@ -119,28 +123,29 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#docker-promise-6-7">Docker Promise 6 7</a></li>
-        <li class="main "><a href="#1-docker-architecture-3">1. Docker Architecture 3</a></li>
-        <li class="main "><a href="#21-docker-images-2">2.1 Docker Images 2</a></li>
-        <li class="main "><a href="#22-docker-containers-3">2.2 Docker Containers 3</a></li>
+        <li class="main active"><a href="#docker-promise">Docker Promise</a></li>
+        <li class="main "><a href="#1-docker-architecture">1. Docker Architecture</a></li>
+        <li class="main "><a href="#21-docker-images">2.1 Docker Images</a></li>
+        <li class="main "><a href="#22-docker-containers">2.2 Docker Containers</a></li>
             <li><a href="#23-registry-and-repository">2.3 Registry and Repository</a></li>
-            <li><a href="#23-docker-networking-5">2.3 Docker Networking 5</a></li>
-        <li class="main "><a href="#3-docker-orchestration-2">3. Docker Orchestration 2</a></li>
+            <li><a href="#23-docker-networking">2.3 Docker Networking</a></li>
+        <li class="main "><a href="#3-docker-orchestration">3. Docker Orchestration</a></li>
         <li class="main "><a href="#installation">Installation</a></li>
         <li class="main "><a href="#usage">Usage</a></li>
             <li><a href="#lab-search-for-images-on-docker-hub">Lab: Search for Images on Docker Hub</a></li>
         <li class="main "><a href="#installation-ubuntu">Installation: Ubuntu</a></li>
-        <li class="main "><a href="#installation-1">Installation 1</a></li>
-            <li><a href="#installation-1_1">Installation 1</a></li>
+        <li class="main "><a href="#installation_1">Installation</a></li>
+            <li><a href="#installation_2">Installation</a></li>
         <li class="main "><a href="#docker-centos-7">Docker: CentOS 7</a></li>
-            <li><a href="#installation-1_2">Installation 1</a></li>
+            <li><a href="#installation_3">Installation</a></li>
             <li><a href="#kitematic">Kitematic</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>[embed]https://www.youtube.com/watch?v=cRczhEvSH2A[/embed]</p>
-<h2 id="docker-promise-6-7">Docker Promise <sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7" rel="footnote">7</a></sup></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cRczhEvSH2A" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="docker-promise">Docker Promise</h2>
 <blockquote>
 <p>Docker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.</p>
 </blockquote>
@@ -151,14 +156,14 @@
 <p><code>Portable across providers</code> You want to be able to move your application between different cloud providers and your own servers, or run it across several providers.</p>
 <p><strong>Run</strong>: Docker offers you the ability to deploy scalable services, securely and reliably, on a wide variety of platforms.</p>
 <p><code>Portable across environments</code> You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.</p>
-<h2 id="1-docker-architecture-3">1. Docker Architecture <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h2>
+<h2 id="1-docker-architecture">1. Docker Architecture</h2>
 <p><img alt="" src="https://docs.docker.com/v1.8/article-img/architecture.svg" /></p>
-<p><strong>Docker Containers vs Virtual Hypervisor Model</strong> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<p><strong>Docker Containers vs Virtual Hypervisor Model</strong></p>
 <p><img src="http://www.eweek.com/imagesvr_ce/8781/DockerFacts_3.jpg" alt="" /></p>
 <p>In the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.</p>
 <p><strong>Docker Images and Docker Containers</strong></p>
 <p><img src="http://devopscube.com/wp-content/uploads/2015/02/docker-filesystems-busyboxrw.png" alt="" /></p>
-<h2 id="21-docker-images-2">2.1 Docker Images <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h2>
+<h2 id="21-docker-images">2.1 Docker Images</h2>
 <blockquote>
 <p>Docker images are the <strong>build component</strong> of Docker.</p>
 </blockquote>
@@ -173,7 +178,7 @@
 <li>The default tag is <code>lastest</code></li>
 <li>Look up the repository on Docker to see what tags are available</li>
 </ul>
-<h2 id="22-docker-containers-3">2.2 Docker Containers <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></h2>
+<h2 id="22-docker-containers">2.2 Docker Containers</h2>
 <blockquote>
 <p>Docker containers are the <strong>run component</strong> of Docker.</p>
 </blockquote>
@@ -186,11 +191,11 @@
 <p>Docker registries hold images. These are public or private stores from which you upload or download images. The public Docker registry is provided with the Docker Hub. It serves a huge collection of existing images for your use. These can be images you create yourself or you can use images that others have previously created.
 Docker Hub</p>
 <p>Docker Hub is the public registry that contains a large number of images available for your use.</p>
-<h3 id="23-docker-networking-5">2.3 Docker Networking <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup></h3>
+<h3 id="23-docker-networking">2.3 Docker Networking</h3>
 <ol>
 <li>Docker use DNS instead <code>etc/hosts</code></li>
 </ol>
-<h2 id="3-docker-orchestration-2">3. Docker Orchestration <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></h2>
+<h2 id="3-docker-orchestration">3. Docker Orchestration</h2>
 <ul>
 <li>Three tools for orchestrating distributed applications with Docker</li>
 <li>Docker Machine<ul>
@@ -212,7 +217,7 @@ Docker Hub</p>
 <h2 id="usage">Usage</h2>
 <h4 id="lab-search-for-images-on-docker-hub">Lab: Search for Images on Docker Hub</h4>
 <h2 id="installation-ubuntu">Installation: Ubuntu</h2>
-<h2 id="installation-1">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h2>
+<h2 id="installation_1">Installation</h2>
 <p><code>ubuntu 14.04</code></p>
 <p><strong>Prerequisites</strong></p>
 <pre><code>apt-get update
@@ -242,7 +247,7 @@ docker info
 docker version
 </code></pre>
 
-<h3 id="installation-1_1">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h3>
+<h3 id="installation_2">Installation</h3>
 <p>https://www.docker.com/products/docker-toolbox</p>
 <ol>
 <li>Go to the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a> page.</li>
@@ -250,7 +255,7 @@ docker version
 <li>Install Docker Toolbox by double-clicking the installer.</li>
 </ol>
 <h2 id="docker-centos-7">Docker: CentOS 7</h2>
-<h3 id="installation-1_2">Installation <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h3>
+<h3 id="installation_3">Installation</h3>
 <p>Install Docker</p>
 <pre><code># make sure your existing yum packages are up-to-date.
 sudo yum -y update

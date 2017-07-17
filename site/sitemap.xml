@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>/intro/</loc>
+     <loc>/get_started/</loc>
      <lastmod>2017-07-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,6 +27,12 @@
         
     <url>
      <loc>/dockerfile/</loc>
+     <lastmod>2017-07-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/container/</loc>
      <lastmod>2017-07-17</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -31,97 +31,97 @@
             "title": "External Links"
         }, 
         {
-            "location": "/intro/", 
-            "text": "[embed]https://www.youtube.com/watch?v=cRczhEvSH2A[/embed]\n\n\nDocker Promise \n6\n \n7\n\n\n\n\nDocker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.\n\n\n\n\n\n\nBuild\n: Docker allows you to compose your application from microservices, without worrying about inconsistencies between development and production environments, and without locking into any platform or language.\n\n\nComposable\n You want to be able to split up your application into multiple services.\n\n\nShip\n: Docker lets you design the entire cycle of application development, testing and distribution, and manage it with a consistent user interface.\n\n\nPortable across providers\n You want to be able to move your application between different cloud providers and your own servers, or run it across several providers.\n\n\nRun\n: Docker offers you the ability to deploy scalable services, securely and reliably, on a wide variety of platforms.\n\n\nPortable across environments\n You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.\n\n\n1. Docker Architecture \n3\n\n\n\n\nDocker Containers vs Virtual Hypervisor Model\n \n1\n\n\n\n\nIn the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.\n\n\nDocker Images and Docker Containers\n\n\n\n\n2.1 Docker Images \n2\n\n\n\n\nDocker images are the \nbuild component\n of Docker.\n\n\n\n\nFor example, an image could contain an Ubuntu operating system with Apache and your web application installed. Images are used to create Docker containers.\n\n\nDocker provides a simple way to build new images or update existing images, or you can download Docker images that other people have already created.\n\n\nBuilt by you or other Docker users\n\n\nStored in the Docker Hub or your local Registry\n\n\nImages Tags\n\n\n\n\nImages are specified by repository:tag\n\n\nThe same image my have multiple tags\n\n\nThe default tag is \nlastest\n\n\nLook up the repository on Docker to see what tags are available\n\n\n\n\n2.2 Docker Containers \n3\n\n\n\n\nDocker containers are the \nrun component\n of Docker.\n\n\n\n\nDocker containers are similar to a directory. A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image. Docker containers can be run, started, stopped, moved, and deleted. Each container is an isolated and secure application platform.\n\n\n2.3 Registry and Repository\n\n\n\n\nDocker registries are the \ndistribution component\n of Docker.\n\n\n\n\nDocker registries\n\n\nDocker registries hold images. These are public or private stores from which you upload or download images. The public Docker registry is provided with the Docker Hub. It serves a huge collection of existing images for your use. These can be images you create yourself or you can use images that others have previously created.\nDocker Hub\n\n\nDocker Hub is the public registry that contains a large number of images available for your use.\n\n\n2.3 Docker Networking \n5\n\n\n\n\nDocker use DNS instead \netc/hosts\n\n\n\n\n3. Docker Orchestration \n2\n\n\n\n\nThree tools for orchestrating distributed applications with Docker\n\n\nDocker Machine\n\n\nTool that provisions Docker hosts and installs the Docker Engine on them\n\n\n\n\n\n\nDocker Swarm\n\n\nTool that clusters many Engines and schedules containers\n\n\n\n\n\n\nDocker Compose\n\n\nTool to create and manage multi-container applications\n\n\n\n\n\n\n\n\nInstallation\n\n\nDocker only supports \nCentOS 7,  Windows 7.1, 8/8.1, Mac OSX 10.8\n \n64bit\n\n\nWindows\n, \nCentOS\n\n\nUsage\n\n\nLab: Search for Images on Docker Hub\n\n\nInstallation: Ubuntu\n\n\nInstallation \n1\n\n\nubuntu 14.04\n\n\nPrerequisites\n\n\napt-get update\napt-get install apt-transport-https ca-certificates\n\napt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D\n\n\n\n\nEdit \n/etc/apt/sources.list.d/docker.list\n\n\ndeb https://apt.dockerproject.org/repo ubuntu-trusty main\n\n\n\n\napt-get update\napt-get purge lxc-docker\napt-cache policy docker-engine\n\n\n\n\nInstall docker\n\n\napt-get update\napt-get install -y --force-yes docker-engine\nservice docker start\n\n\n\n\nRun Docker\n\n\ndocker run hello-world\ndocker info\ndocker version\n\n\n\n\nInstallation \n1\n\n\nhttps://www.docker.com/products/docker-toolbox\n\n\n\n\nGo to the \nDocker Toolbox\n page.\n\n\nClick the installer link to download.\n\n\nInstall Docker Toolbox by double-clicking the installer.\n\n\n\n\nDocker: CentOS 7\n\n\nInstallation \n1\n\n\nInstall Docker\n\n\n# make sure your existing yum packages are up-to-date.\nsudo yum -y update\n\n# add docker repo\nsudo tee /etc/yum.repos.d/docker.repo \n-'EOF'\n[dockerrepo]\nname=Docker Repository\nbaseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/\nenabled=1\ngpgcheck=1\ngpgkey=https://yum.dockerproject.org/gpg\nEOF\n\n# install the Docker package.\nsudo yum install -y docker-engine\n\n# start the Docker daemon\nsudo service docker start\n\n# verify\nsudo docker run hello-world\n\n\n\n\nInstall Docker Compose\n\n\nsudo yum install epel-release\nsudo yum install -y python-pip\n\nsudo pip install docker-compose\n\n\n\n\nDocker 1.10.3\n\n\nKitematic\n\n\nPort Forwarding\n\n\nOpen Virtualbox\n\n\nVolumes\n\n\n\n\n\n\n\n\n\n\nInstall Docker for Windows\n\n\n\n\n\n\nSelf Paced Training, Docker Fundamentals\n\n\n\n\n\n\nUnderstand the architecture\n\n\n\n\n\n\nUnderstand the architecture\n\n\n\n\n\n\nDocker Compose and Networking\n\n\n\n\n\n\nhttps://www.docker.com/\n\n\n\n\n\n\nOrchestrating Docker with Machine, Swarm and Compose", 
-            "title": "Installation"
+            "location": "/get_started/", 
+            "text": "Docker Promise\n\n\n\n\nDocker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.\n\n\n\n\n\n\nBuild\n: Docker allows you to compose your application from microservices, without worrying about inconsistencies between development and production environments, and without locking into any platform or language.\n\n\nComposable\n You want to be able to split up your application into multiple services.\n\n\nShip\n: Docker lets you design the entire cycle of application development, testing and distribution, and manage it with a consistent user interface.\n\n\nPortable across providers\n You want to be able to move your application between different cloud providers and your own servers, or run it across several providers.\n\n\nRun\n: Docker offers you the ability to deploy scalable services, securely and reliably, on a wide variety of platforms.\n\n\nPortable across environments\n You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.\n\n\n1. Docker Architecture\n\n\n\n\nDocker Containers vs Virtual Hypervisor Model\n\n\n\n\nIn the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.\n\n\nDocker Images and Docker Containers\n\n\n\n\n2.1 Docker Images\n\n\n\n\nDocker images are the \nbuild component\n of Docker.\n\n\n\n\nFor example, an image could contain an Ubuntu operating system with Apache and your web application installed. Images are used to create Docker containers.\n\n\nDocker provides a simple way to build new images or update existing images, or you can download Docker images that other people have already created.\n\n\nBuilt by you or other Docker users\n\n\nStored in the Docker Hub or your local Registry\n\n\nImages Tags\n\n\n\n\nImages are specified by repository:tag\n\n\nThe same image my have multiple tags\n\n\nThe default tag is \nlastest\n\n\nLook up the repository on Docker to see what tags are available\n\n\n\n\n2.2 Docker Containers\n\n\n\n\nDocker containers are the \nrun component\n of Docker.\n\n\n\n\nDocker containers are similar to a directory. A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image. Docker containers can be run, started, stopped, moved, and deleted. Each container is an isolated and secure application platform.\n\n\n2.3 Registry and Repository\n\n\n\n\nDocker registries are the \ndistribution component\n of Docker.\n\n\n\n\nDocker registries\n\n\nDocker registries hold images. These are public or private stores from which you upload or download images. The public Docker registry is provided with the Docker Hub. It serves a huge collection of existing images for your use. These can be images you create yourself or you can use images that others have previously created.\nDocker Hub\n\n\nDocker Hub is the public registry that contains a large number of images available for your use.\n\n\n2.3 Docker Networking\n\n\n\n\nDocker use DNS instead \netc/hosts\n\n\n\n\n3. Docker Orchestration\n\n\n\n\nThree tools for orchestrating distributed applications with Docker\n\n\nDocker Machine\n\n\nTool that provisions Docker hosts and installs the Docker Engine on them\n\n\n\n\n\n\nDocker Swarm\n\n\nTool that clusters many Engines and schedules containers\n\n\n\n\n\n\nDocker Compose\n\n\nTool to create and manage multi-container applications\n\n\n\n\n\n\n\n\nInstallation\n\n\nDocker only supports \nCentOS 7,  Windows 7.1, 8/8.1, Mac OSX 10.8\n \n64bit\n\n\nWindows\n, \nCentOS\n\n\nUsage\n\n\nLab: Search for Images on Docker Hub\n\n\nInstallation: Ubuntu\n\n\nInstallation\n\n\nubuntu 14.04\n\n\nPrerequisites\n\n\napt-get update\napt-get install apt-transport-https ca-certificates\n\napt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D\n\n\n\n\nEdit \n/etc/apt/sources.list.d/docker.list\n\n\ndeb https://apt.dockerproject.org/repo ubuntu-trusty main\n\n\n\n\napt-get update\napt-get purge lxc-docker\napt-cache policy docker-engine\n\n\n\n\nInstall docker\n\n\napt-get update\napt-get install -y --force-yes docker-engine\nservice docker start\n\n\n\n\nRun Docker\n\n\ndocker run hello-world\ndocker info\ndocker version\n\n\n\n\nInstallation\n\n\nhttps://www.docker.com/products/docker-toolbox\n\n\n\n\nGo to the \nDocker Toolbox\n page.\n\n\nClick the installer link to download.\n\n\nInstall Docker Toolbox by double-clicking the installer.\n\n\n\n\nDocker: CentOS 7\n\n\nInstallation\n\n\nInstall Docker\n\n\n# make sure your existing yum packages are up-to-date.\nsudo yum -y update\n\n# add docker repo\nsudo tee /etc/yum.repos.d/docker.repo \n-'EOF'\n[dockerrepo]\nname=Docker Repository\nbaseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/\nenabled=1\ngpgcheck=1\ngpgkey=https://yum.dockerproject.org/gpg\nEOF\n\n# install the Docker package.\nsudo yum install -y docker-engine\n\n# start the Docker daemon\nsudo service docker start\n\n# verify\nsudo docker run hello-world\n\n\n\n\nInstall Docker Compose\n\n\nsudo yum install epel-release\nsudo yum install -y python-pip\n\nsudo pip install docker-compose\n\n\n\n\nDocker 1.10.3\n\n\nKitematic\n\n\nPort Forwarding\n\n\nOpen Virtualbox\n\n\nVolumes\n\n\n\n\n\n\n\n\n\n\nInstall Docker for Windows\n\n\n\n\n\n\nSelf Paced Training, Docker Fundamentals\n\n\n\n\n\n\nUnderstand the architecture\n\n\n\n\n\n\nUnderstand the architecture\n\n\n\n\n\n\nDocker Compose and Networking\n\n\n\n\n\n\nhttps://www.docker.com/\n\n\n\n\n\n\nOrchestrating Docker with Machine, Swarm and Compose", 
+            "title": "Get Started"
         }, 
         {
-            "location": "/intro/#docker-promise-6-7", 
+            "location": "/get_started/#docker-promise", 
             "text": "Docker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.    Build : Docker allows you to compose your application from microservices, without worrying about inconsistencies between development and production environments, and without locking into any platform or language.  Composable  You want to be able to split up your application into multiple services.  Ship : Docker lets you design the entire cycle of application development, testing and distribution, and manage it with a consistent user interface.  Portable across providers  You want to be able to move your application between different cloud providers and your own servers, or run it across several providers.  Run : Docker offers you the ability to deploy scalable services, securely and reliably, on a wide variety of platforms.  Portable across environments  You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.", 
-            "title": "Docker Promise 6 7"
+            "title": "Docker Promise"
         }, 
         {
-            "location": "/intro/#1-docker-architecture-3", 
-            "text": "Docker Containers vs Virtual Hypervisor Model   1   In the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.  Docker Images and Docker Containers", 
-            "title": "1. Docker Architecture 3"
+            "location": "/get_started/#1-docker-architecture", 
+            "text": "Docker Containers vs Virtual Hypervisor Model   In the Docker container model, the Docker engine sits atop a single host operating system. In contrast, with the traditional virtualization hypervisor mode, a separate guest operating system is required for each virtual machine.  Docker Images and Docker Containers", 
+            "title": "1. Docker Architecture"
         }, 
         {
-            "location": "/intro/#21-docker-images-2", 
+            "location": "/get_started/#21-docker-images", 
             "text": "Docker images are the  build component  of Docker.   For example, an image could contain an Ubuntu operating system with Apache and your web application installed. Images are used to create Docker containers.  Docker provides a simple way to build new images or update existing images, or you can download Docker images that other people have already created.  Built by you or other Docker users  Stored in the Docker Hub or your local Registry  Images Tags   Images are specified by repository:tag  The same image my have multiple tags  The default tag is  lastest  Look up the repository on Docker to see what tags are available", 
-            "title": "2.1 Docker Images 2"
+            "title": "2.1 Docker Images"
         }, 
         {
-            "location": "/intro/#22-docker-containers-3", 
+            "location": "/get_started/#22-docker-containers", 
             "text": "Docker containers are the  run component  of Docker.   Docker containers are similar to a directory. A Docker container holds everything that is needed for an application to run. Each container is created from a Docker image. Docker containers can be run, started, stopped, moved, and deleted. Each container is an isolated and secure application platform.", 
-            "title": "2.2 Docker Containers 3"
+            "title": "2.2 Docker Containers"
         }, 
         {
-            "location": "/intro/#23-registry-and-repository", 
+            "location": "/get_started/#23-registry-and-repository", 
             "text": "Docker registries are the  distribution component  of Docker.   Docker registries  Docker registries hold images. These are public or private stores from which you upload or download images. The public Docker registry is provided with the Docker Hub. It serves a huge collection of existing images for your use. These can be images you create yourself or you can use images that others have previously created.\nDocker Hub  Docker Hub is the public registry that contains a large number of images available for your use.", 
             "title": "2.3 Registry and Repository"
         }, 
         {
-            "location": "/intro/#23-docker-networking-5", 
+            "location": "/get_started/#23-docker-networking", 
             "text": "Docker use DNS instead  etc/hosts", 
-            "title": "2.3 Docker Networking 5"
+            "title": "2.3 Docker Networking"
         }, 
         {
-            "location": "/intro/#3-docker-orchestration-2", 
+            "location": "/get_started/#3-docker-orchestration", 
             "text": "Three tools for orchestrating distributed applications with Docker  Docker Machine  Tool that provisions Docker hosts and installs the Docker Engine on them    Docker Swarm  Tool that clusters many Engines and schedules containers    Docker Compose  Tool to create and manage multi-container applications", 
-            "title": "3. Docker Orchestration 2"
+            "title": "3. Docker Orchestration"
         }, 
         {
-            "location": "/intro/#installation", 
+            "location": "/get_started/#installation", 
             "text": "Docker only supports  CentOS 7,  Windows 7.1, 8/8.1, Mac OSX 10.8   64bit  Windows ,  CentOS", 
             "title": "Installation"
         }, 
         {
-            "location": "/intro/#usage", 
+            "location": "/get_started/#usage", 
             "text": "", 
             "title": "Usage"
         }, 
         {
-            "location": "/intro/#lab-search-for-images-on-docker-hub", 
+            "location": "/get_started/#lab-search-for-images-on-docker-hub", 
             "text": "", 
             "title": "Lab: Search for Images on Docker Hub"
         }, 
         {
-            "location": "/intro/#installation-ubuntu", 
+            "location": "/get_started/#installation-ubuntu", 
             "text": "", 
             "title": "Installation: Ubuntu"
         }, 
         {
-            "location": "/intro/#installation-1", 
+            "location": "/get_started/#installation_1", 
             "text": "ubuntu 14.04  Prerequisites  apt-get update\napt-get install apt-transport-https ca-certificates\n\napt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D  Edit  /etc/apt/sources.list.d/docker.list  deb https://apt.dockerproject.org/repo ubuntu-trusty main  apt-get update\napt-get purge lxc-docker\napt-cache policy docker-engine  Install docker  apt-get update\napt-get install -y --force-yes docker-engine\nservice docker start  Run Docker  docker run hello-world\ndocker info\ndocker version", 
-            "title": "Installation 1"
+            "title": "Installation"
         }, 
         {
-            "location": "/intro/#installation-1_1", 
+            "location": "/get_started/#installation_2", 
             "text": "https://www.docker.com/products/docker-toolbox   Go to the  Docker Toolbox  page.  Click the installer link to download.  Install Docker Toolbox by double-clicking the installer.", 
-            "title": "Installation 1"
+            "title": "Installation"
         }, 
         {
-            "location": "/intro/#docker-centos-7", 
+            "location": "/get_started/#docker-centos-7", 
             "text": "", 
             "title": "Docker: CentOS 7"
         }, 
         {
-            "location": "/intro/#installation-1_2", 
+            "location": "/get_started/#installation_3", 
             "text": "Install Docker  # make sure your existing yum packages are up-to-date.\nsudo yum -y update\n\n# add docker repo\nsudo tee /etc/yum.repos.d/docker.repo  -'EOF'\n[dockerrepo]\nname=Docker Repository\nbaseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/\nenabled=1\ngpgcheck=1\ngpgkey=https://yum.dockerproject.org/gpg\nEOF\n\n# install the Docker package.\nsudo yum install -y docker-engine\n\n# start the Docker daemon\nsudo service docker start\n\n# verify\nsudo docker run hello-world  Install Docker Compose  sudo yum install epel-release\nsudo yum install -y python-pip\n\nsudo pip install docker-compose  Docker 1.10.3", 
-            "title": "Installation 1"
+            "title": "Installation"
         }, 
         {
-            "location": "/intro/#kitematic", 
+            "location": "/get_started/#kitematic", 
             "text": "", 
             "title": "Kitematic"
         }, 
         {
-            "location": "/intro/#port-forwarding", 
+            "location": "/get_started/#port-forwarding", 
             "text": "Open Virtualbox", 
             "title": "Port Forwarding"
         }, 
         {
-            "location": "/intro/#volumes", 
+            "location": "/get_started/#volumes", 
             "text": "Install Docker for Windows    Self Paced Training, Docker Fundamentals    Understand the architecture    Understand the architecture    Docker Compose and Networking    https://www.docker.com/    Orchestrating Docker with Machine, Swarm and Compose", 
             "title": "Volumes"
         }, 
@@ -179,6 +179,41 @@
             "location": "/dockerfile/#operating-systems-for-docker-1-2", 
             "text": "Operating System  Features    CoreOS  Service Discovery, Cluster management, Auto-updates \nCoreOS is designed for security, consistency, and reliability. Instead of installing packages via yum or apt, CoreOS uses Linux containers to manage your services at a higher level of abstraction. A single service\u2019s code and all dependencies are packaged within a container that can be run on one or many CoreOS machines        The New Minimalist Operating Systems    Top 5 operating systems for your Docker infrastructure", 
             "title": "Operating Systems for Docker 1 2"
+        }, 
+        {
+            "location": "/container/", 
+            "text": "Container\n\n\nLifecycle\n\n\n\n\ndocker create\n creates a container but does not start it.\n\n\ndocker rename\n allows the container to be renamed.\n\n\ndocker run\n creates and starts a container in one operation.\n\n\ndocker rm\n deletes a container.\n\n\ndocker update\n updates a container's resource limits.\n\n\n\n\nStarting and Stopping\n\n\n\n\ndocker start\n starts a container so it is running.\n\n\ndocker stop\n stops a running container.\n\n\ndocker restart\n stops and starts a container.\n\n\ndocker pause\n pauses a running container, \"freezing\" it in place.\n\n\ndocker unpause\n will unpause a running container.\n\n\ndocker wait\n blocks until running container stops.\n\n\ndocker kill\n sends a SIGKILL to a running container.\n\n\ndocker attach\n will connect to a running container.\n\n\n\n\nInfo\n\n\n\n\ndocker ps\n shows running containers.\n\n\ndocker logs\n gets logs from container. (You can use a custom log driver, but logs is only available for json-file and * journald in 1.10).\n\n\ndocker inspect\n looks at all the info on a container (including IP address).\n\n\ndocker events\n gets events from container.\n\n\ndocker port\n shows public facing port of container.\n\n\ndocker top\n shows running processes in container.\n\n\ndocker stats\n shows containers' resource usage statistics.\n\n\ndocker diff\n shows changed files in the container's FS.\n\n\n\n\nImport / Export\n\n\n\n\ndocker cp\n copies files or folders between a container and the local filesystem.\n\n\ndocker export\n turns container filesystem into tarball archive stream to STDOUT.\n\n\n\n\nExample\n\n\ndocker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt\n\n\n\n\nNote that docker cp is not new in \nDocker 1.8\n. In older versions of Docker, the docker cp command only allowed copying files from a container to the host\n\n\nExecuting Commands\n\n\n\n\ndocker exec\n to execute a command in container.\n\n\n\n\nTo enter a running container, attach a new shell process to a running container called foo\n\n\ndocker exec -it foo /bin/bash.\n\n\n\n\nSuggest Readings\n: \ndocker cheatsheet", 
+            "title": "Docker Container"
+        }, 
+        {
+            "location": "/container/#container", 
+            "text": "", 
+            "title": "Container"
+        }, 
+        {
+            "location": "/container/#lifecycle", 
+            "text": "docker create  creates a container but does not start it.  docker rename  allows the container to be renamed.  docker run  creates and starts a container in one operation.  docker rm  deletes a container.  docker update  updates a container's resource limits.", 
+            "title": "Lifecycle"
+        }, 
+        {
+            "location": "/container/#starting-and-stopping", 
+            "text": "docker start  starts a container so it is running.  docker stop  stops a running container.  docker restart  stops and starts a container.  docker pause  pauses a running container, \"freezing\" it in place.  docker unpause  will unpause a running container.  docker wait  blocks until running container stops.  docker kill  sends a SIGKILL to a running container.  docker attach  will connect to a running container.", 
+            "title": "Starting and Stopping"
+        }, 
+        {
+            "location": "/container/#info", 
+            "text": "docker ps  shows running containers.  docker logs  gets logs from container. (You can use a custom log driver, but logs is only available for json-file and * journald in 1.10).  docker inspect  looks at all the info on a container (including IP address).  docker events  gets events from container.  docker port  shows public facing port of container.  docker top  shows running processes in container.  docker stats  shows containers' resource usage statistics.  docker diff  shows changed files in the container's FS.", 
+            "title": "Info"
+        }, 
+        {
+            "location": "/container/#import-export", 
+            "text": "docker cp  copies files or folders between a container and the local filesystem.  docker export  turns container filesystem into tarball archive stream to STDOUT.   Example  docker cp foo.txt mycontainer:/foo.txt\ndocker cp mycontainer:/foo.txt foo.txt  Note that docker cp is not new in  Docker 1.8 . In older versions of Docker, the docker cp command only allowed copying files from a container to the host", 
+            "title": "Import / Export"
+        }, 
+        {
+            "location": "/container/#executing-commands", 
+            "text": "docker exec  to execute a command in container.   To enter a running container, attach a new shell process to a running container called foo  docker exec -it foo /bin/bash.  Suggest Readings :  docker cheatsheet", 
+            "title": "Executing Commands"
         }, 
         {
             "location": "/compose/", 

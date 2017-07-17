@@ -1,6 +1,6 @@
-[embed]https://www.youtube.com/watch?v=cRczhEvSH2A[/embed]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cRczhEvSH2A" frameborder="0" allowfullscreen></iframe>
 
-## Docker Promise [^6] [^7]
+## Docker Promise
 
 > Docker provides an integrated technology suite that enables development and IT operations teams to build, ship, and run distributed applications anywhere.
 
@@ -18,11 +18,11 @@
 
 `Portable across environments` You want to be able to define how your application will run in development, and then run it seamlessly in testing, staging and production.
 
-## 1. Docker Architecture [^3]
+## 1. Docker Architecture
 
 ![](https://docs.docker.com/v1.8/article-img/architecture.svg)
 
-**Docker Containers vs Virtual Hypervisor Model** [^1]
+**Docker Containers vs Virtual Hypervisor Model**
 
 <img src="http://www.eweek.com/imagesvr_ce/8781/DockerFacts_3.jpg" alt="" />
 
@@ -32,7 +32,7 @@ In the Docker container model, the Docker engine sits atop a single host operati
 
 <img src="http://devopscube.com/wp-content/uploads/2015/02/docker-filesystems-busyboxrw.png" alt="" />
 
-## 2.1 Docker Images [^2]
+## 2.1 Docker Images
 
 > Docker images are the **build component** of Docker.
 
@@ -51,7 +51,7 @@ Stored in the Docker Hub or your local Registry
 * The default tag is `lastest`
 * Look up the repository on Docker to see what tags are available
 
-## 2.2 Docker Containers [^3]
+## 2.2 Docker Containers
 
 > Docker containers are the **run component** of Docker.
 
@@ -68,11 +68,11 @@ Docker Hub
 
 Docker Hub is the public registry that contains a large number of images available for your use.
 
-### 2.3 Docker Networking [^5]
+### 2.3 Docker Networking
 
 1. Docker use DNS instead `etc/hosts`
 
-## 3. Docker Orchestration [^2]
+## 3. Docker Orchestration
 
 * Three tools for orchestrating distributed applications with Docker
 * Docker Machine
@@ -102,7 +102,7 @@ Docker only supports <code>CentOS 7,  Windows 7.1, 8/8.1, Mac OSX 10.8</code> <c
 
 ## Installation: Ubuntu
 
-## Installation [^1]
+## Installation
 
 `ubuntu 14.04`
 
@@ -146,7 +146,7 @@ docker version
 
 [^1]: [Docker document](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 
-### Installation [^1]
+### Installation
 
 https://www.docker.com/products/docker-toolbox
 
@@ -156,7 +156,7 @@ https://www.docker.com/products/docker-toolbox
 
 ## Docker: CentOS 7
 
-### Installation [^1]
+### Installation
 
 Install Docker
 

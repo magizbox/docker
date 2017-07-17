@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>UCP - Docker</title>
+        <title>Docker Container - Docker</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -66,8 +66,8 @@
     <a href="../dockerfile/">Dockerfile</a>
 </li>
                             
-<li >
-    <a href="../container/">Docker Container</a>
+<li class="active">
+    <a href="./">Docker Container</a>
 </li>
                             
 <li >
@@ -78,8 +78,8 @@
     <a href="../swarm/">Swarm</a>
 </li>
                             
-<li class="active">
-    <a href="./">UCP</a>
+<li >
+    <a href="../ucp/">UCP</a>
 </li>
                             
 <li >
@@ -106,12 +106,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../swarm/">
+                        <a rel="next" href="../dockerfile/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../labs/">
+                        <a rel="prev" href="../compose/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -123,16 +123,67 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#docker-ucp">Docker UCP</a></li>
+        <li class="main active"><a href="#container">Container</a></li>
+            <li><a href="#lifecycle">Lifecycle</a></li>
+            <li><a href="#starting-and-stopping">Starting and Stopping</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#import-export">Import / Export</a></li>
+            <li><a href="#executing-commands">Executing Commands</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="docker-ucp">Docker UCP</h1>
-<p>Docker Universal Control Plane</p>
-<p>Docker Universal Control Plane provides an on-premises, or virtual private cloud (VPC) container management solution for Docker apps and infrastructure regardless of where your applications are running.</p>
-<p>[embed]https://www.youtube.com/watch?v=woDzgqtZZKc[/embed]</p>
-<p><img alt="" src="https://farm6.staticflickr.com/5789/23200594223_02f440e72d_o.png" /></p></div>
+<h3 id="container">Container</h3>
+<h4 id="lifecycle">Lifecycle</h4>
+<ul>
+<li><code>docker create</code> creates a container but does not start it.</li>
+<li><code>docker rename</code> allows the container to be renamed.</li>
+<li><code>docker run</code> creates and starts a container in one operation.</li>
+<li><code>docker rm</code> deletes a container.</li>
+<li><code>docker update</code> updates a container's resource limits.</li>
+</ul>
+<h4 id="starting-and-stopping">Starting and Stopping</h4>
+<ul>
+<li><code>docker start</code> starts a container so it is running.</li>
+<li><code>docker stop</code> stops a running container.</li>
+<li><code>docker restart</code> stops and starts a container.</li>
+<li><code>docker pause</code> pauses a running container, "freezing" it in place.</li>
+<li><code>docker unpause</code> will unpause a running container.</li>
+<li><code>docker wait</code> blocks until running container stops.</li>
+<li><code>docker kill</code> sends a SIGKILL to a running container.</li>
+<li><code>docker attach</code> will connect to a running container.</li>
+</ul>
+<h4 id="info">Info</h4>
+<ul>
+<li><code>docker ps</code> shows running containers.</li>
+<li><code>docker logs</code> gets logs from container. (You can use a custom log driver, but logs is only available for json-file and * journald in 1.10).</li>
+<li><code>docker inspect</code> looks at all the info on a container (including IP address).</li>
+<li><code>docker events</code> gets events from container.</li>
+<li><code>docker port</code> shows public facing port of container.</li>
+<li><code>docker top</code> shows running processes in container.</li>
+<li><code>docker stats</code> shows containers' resource usage statistics.</li>
+<li><code>docker diff</code> shows changed files in the container's FS.</li>
+</ul>
+<h4 id="import-export">Import / Export</h4>
+<ul>
+<li><code>docker cp</code> copies files or folders between a container and the local filesystem.</li>
+<li><code>docker export</code> turns container filesystem into tarball archive stream to STDOUT.</li>
+</ul>
+<p>Example</p>
+<pre><code>docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt
+</code></pre>
+
+<p>Note that docker cp is not new in <code>Docker 1.8</code>. In older versions of Docker, the docker cp command only allowed copying files from a container to the host</p>
+<h4 id="executing-commands">Executing Commands</h4>
+<ul>
+<li><code>docker exec</code> to execute a command in container.</li>
+</ul>
+<p>To enter a running container, attach a new shell process to a running container called foo</p>
+<pre><code>docker exec -it foo /bin/bash.
+</code></pre>
+
+<p><strong>Suggest Readings</strong>: <a href="https://github.com/wsargent/docker-cheat-sheet#containers">docker cheatsheet</a></p></div>
         </div>
 
         <footer class="col-md-12">
