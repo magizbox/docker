@@ -1,15 +1,27 @@
 site_name: Docker
 pages:
 - "Home": 'index.md'
-- "Introduction": 'intro.md'
-- "Dev":
+- "Installation": 'intro.md'
+- "Doc":
   - "Docker Image": 'dev.md'
   - "Dockerfile": 'dockerfile.md'
   - "Docker Compose": 'compose.md'
-- "Swarm": 'swarm.md'
-- "UCP": 'ucp.md'
-- "Labs": 'labs.md'
-- "GUI":
-  - "Chrome": "gui_chrome.md"
+  - "Swarm": 'swarm.md'
+  - "UCP": 'ucp.md'
+  - "Labs": 'labs.md'
+  - "GUI":
+    - "Chrome": "gui_chrome.md"
 markdown_extensions:
     - footnotes
+
+extra_css:
+  - css/book.css
+  - css/course.css
+  - css/video.css
+extra_javascript:
+  - js/underscore.js
+  - js/gspreadsheet.js
+  - js/book.js
+  - js/course.js
+  - js/video.js
+

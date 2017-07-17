@@ -24,9 +24,63 @@ Box your component
     └── run.sh
 ```
 
-**Services**
+## Example
 
-**Networks**
+`docker-compose.yml` example from docker-birthday-3 [^3]
+
+```yml
+version: "2"
+
+services:
+  voting-app:
+    build: ./voting-app/.
+    volumes:
+      - ./voting-app:/app
+    ports:
+      - "5000:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  result-app:
+    build: ./result-app/.
+    volumes:
+      - ./result-app:/app
+    ports:
+      - "5001:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  worker:
+    image: manomarks/worker
+    networks:
+      - back-tier
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports: ["6379"]
+    networks:
+      - back-tier
+
+  db:
+    image: postgres:9.4
+    container_name: db
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  front-tier:
+  back-tier:
+```
+
+## Networks
 
 `network_mode`, `ports`, `external_hosts`, `link`, <del datetime="2016-04-06T15:21:55+00:00">`net`</del>
 
@@ -37,9 +91,9 @@ network_mode: "service:[service_name]"
 network_mode: "container:[container name/id]"
 ```
 
-**Volumes**
+## Volumes
 
-**Usage**
+## Ops
 
 ```
 # rebuild your images
@@ -70,3 +124,4 @@ command: "sleep infinity"
 
 [^1]: [Docker Compose Files Version 2](https://www.youtube.com/watch?v=EReEOMS7gsk)
 [^2]: [github issue, Keep a container running in compose](https://github.com/docker/compose/issues/1926)
+[^3]: [docker-compose.yml](https://github.com/docker/docker-birthday-3/blob/master/example-voting-app/docker-compose.yml)
